@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material"
+import { Card, CardContent, CardMedia, Paper, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 import { IBook } from "../models"
 
@@ -27,24 +27,25 @@ export function BookVolumeCard({book}: BookCardProps) {
     <Link to={`/about/${book.id}`}>
       <Card
         variant="outlined"
-        sx={{ height: 600, width: 330, my: 2, backgroundColor: '#dbe9ec' }}
+        sx={{ height: 600, width: 330, my: 2, backgroundColor: '#dbe9ec'}}
       >
         
-        <CardContent>
+        <CardContent>          
           <CardMedia
             component="img"            
             sx={{ height: 300, width: 210, mx: 'auto', my: 1 }}
             image={imageBook}
             alt={book.volumeInfo.title}
-          />
+          />          
+
           <Typography sx={{ minHeight: 75, mb: 'auto', textAlign: 'center' }} variant="h6" >
             {book.volumeInfo.title}
           </Typography>
           <Typography variant="body2">
-           Authors: <strong>{book.volumeInfo.authors}</strong>            
+           Authors: <strong>{book.volumeInfo.authors?.join(', ')}</strong>            
           </Typography>
           <Typography variant="body2">
-            Categories: <strong>{book.volumeInfo.categories}</strong>            
+            Categories: <strong>{book.volumeInfo.categories?.[0]}</strong>            
           </Typography>
           
           <Typography color="text.secondary">

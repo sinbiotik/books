@@ -27,8 +27,11 @@ export function AppBarBlock() {
             <Link to={`/`}>
               <Button sx={{ color: '#fff' }}>Home</Button>
             </Link>
+
+            <Link to={`/bookshelf`}>
+              <Button sx={{ color: '#fff', ml: 2 }}>My bookshelf</Button>
+            </Link>
             
-            <Button sx={{ color: '#fff' }}>About</Button>
           </Box>
         </Toolbar>
       </AppBar>

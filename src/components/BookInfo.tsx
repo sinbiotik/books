@@ -1,32 +1,31 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material"
+import { Button, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { IBook } from "../models"
 
 interface BookInfoProps {
-  book: IBook
+  book: IBook;
+  onBookVolumeId: (bookVolumeId: string) => void
 }
 
-export function BookInfo({book}: BookInfoProps) {
-  const imageBookList = book.volumeInfo.imageLinks
-  let imageBook: string | undefined
-  if (imageBookList) {
-    if (imageBookList?.extraLarge){
-      imageBook = imageBookList.extraLarge
-    } else if(imageBookList?.large) {
-      imageBook = imageBookList.large
-    } else if(imageBookList?.medium) {
-      imageBook = imageBookList.medium
-    } else if(imageBookList?.small) {
-      imageBook = imageBookList.small
-    } else if(imageBookList?.smallThumbnail) {
-      imageBook = imageBookList.smallThumbnail
-    } else if(imageBookList?.thumbnail) {
-      imageBook = imageBookList?.thumbnail
-    } else imageBook = undefined    
+export function BookInfo({book, onBookVolumeId}: BookInfoProps) {
+  
+  function onBookVolumeIdHandler() {
+    onBookVolumeId(book.id)
   }
 
+  const imageBookList = book.volumeInfo.imageLinks
+  const imageBook =     
+    imageBookList?.large
+    || imageBookList?.medium
+    || imageBookList?.small
+    || imageBookList?.thumbnail
+    || imageBookList?.smallThumbnail 
+
   return(
-    <Card variant="outlined" sx={{ width: 'auto', minHeight: 1080, my: 2, backgroundColor: '#dbe9ec'}}>
-      <CardContent>
+    <Card
+      variant="outlined"
+      sx={{ width: 'auto', minHeight: 1080, my: 2, backgroundColor: '#dbe9ec'}}
+    >
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2}}>
         <Typography sx={{my: 1 }} variant="h4">
           {book.volumeInfo.title}
         </Typography>
@@ -48,7 +47,13 @@ export function BookInfo({book}: BookInfoProps) {
             {book.volumeInfo.description}
           </Typography>
         }
-
+        <Button
+          variant="contained"
+          sx={{my: 3, mx: 'auto'}}
+          onClick={onBookVolumeIdHandler}
+        >
+          Add to my bookshelf
+        </Button>
       </CardContent>
     </Card>
     

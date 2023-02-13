@@ -1,12 +1,12 @@
 import { Box, Input, Button } from "@mui/material"
 
 interface InputFieldProps {
-  textInput: string;
+  query: string;
   onInput: (value: string) => void;
   onSubmit: () => void;
 }
 
-export function InputField({textInput, onInput, onSubmit}: InputFieldProps) {
+export function QueryField({query, onInput, onSubmit}: InputFieldProps) {
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onInput(e.target.value)        
@@ -35,7 +35,7 @@ export function InputField({textInput, onInput, onSubmit}: InputFieldProps) {
         <Input
           placeholder="Select book title"          
           sx={{ mb: 1, width: 350 }}
-          value={textInput}
+          value={query}
           onChange={changeHandler}
           onKeyDown={keyDownHandler}
         />        

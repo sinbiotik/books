@@ -2,16 +2,16 @@ import { Box, FormControl, FormHelperText, InputLabel} from "@mui/material";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
 
-interface SelectBlockProps {
+interface FiltersBlockProps {
   category: string;
   orderBy: string;
   onSelectCategory: (value: string) => void;
   onSelectOrderBy: (value: string) => void;
 }
 
-export function SelectBlock({
+export function FiltersBlock({
   category, orderBy, onSelectCategory, onSelectOrderBy
-}: SelectBlockProps){
+}: FiltersBlockProps){
 
   const handleChangeCategory = (e: SelectChangeEvent) => {
     onSelectCategory(e.target.value);

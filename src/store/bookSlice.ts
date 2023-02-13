@@ -19,7 +19,7 @@ export const fetchBook = createAsyncThunk<
 >(
   'book/bookSlice',
   async function (id, {rejectWithValue}) {
-    try {
+    try {      
       const response = await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`)
       const res: IBook = response.data  
       console.log(res)  
@@ -38,6 +38,7 @@ const bookSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchBook.pending, (state) => {
+        state.book= null
         state.loading = true
         state.error = null
       })

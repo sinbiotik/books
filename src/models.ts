@@ -37,7 +37,7 @@ export interface ImageLinks {
 
 export interface VolumeInfo {
   title: string;
-  authors: string[];
+  authors?: string[];
   publishedDate: string;
   industryIdentifiers: IndustryIdentifier[];
   readingModes: ReadingModes;
@@ -53,7 +53,7 @@ export interface VolumeInfo {
   infoLink: string;
   canonicalVolumeLink: string;
   subtitle: string;
-  categories: string[];
+  categories?: string[];
   description?: string;
 }
 

@@ -1,43 +1,41 @@
 import { Box, Container, Typography } from "@mui/material"
-import  { useState, useEffect } from 'react';
+import  { useState } from 'react';
 import { AppBarBlock } from "../components/AppBarBlock";
 import { BookVolumeCard } from '../components/BookVolumeCard';
 import { ErrorMessage } from "../components/ErrorMessage";
-import { InputField } from '../components/InputField';
+import { QueryField } from '../components/QueryField';
 import { Loader } from "../components/Loader";
-import { SelectBlock } from "../components/SelectBlock";
+import { FiltersBlock } from "../components/FiltersBlock";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchBooksVolumes } from "../store/booksVolumesSlice";
+import { PaginationBlock } from "../components/PaginationBlock";
 
 
 export function HomePage() {
-  const [textInput, setTextInput] = useState('')
-
+  const [query, setQuery] = useState('')
   const [category, setCategory] = useState('all');
   const [orderBy , setOrderBy ] = useState('relevance');
+  const [page, setPage] = useState(1)
 
   const {booksVolumes, totalItems, loading, error} = useAppSelector(
     state => state.booksVolumes
   )
+  // console.log(page)
   const dispatch = useAppDispatch()
-  // useEffect(() => {
-  //   dispatch(fetchBooks(textInput))
-  // }, [dispatch])
 
   const addSearch = () => {
-    if(textInput.trim().length) {
-      // console.log(textInput.trim())
-      dispatch(fetchBooksVolumes({textInput, category, orderBy}))   
-      setTextInput('')
+    if(query.trim().length) {
+      dispatch(fetchBooksVolumes({query, category, orderBy, page}))   
+      // setQuery('')
     }    
   }
 
   return(
     <Container>
       <AppBarBlock />      
-      <InputField textInput={textInput} onInput={setTextInput} onSubmit={addSearch}/>
+      <QueryField query={query} onInput={setQuery} onSubmit={addSearch}/>
       
-      <SelectBlock
+      <FiltersBlock
         category={category}
         orderBy={orderBy}
         onSelectCategory={setCategory}
@@ -64,8 +62,27 @@ export function HomePage() {
         {error && <ErrorMessage error={error} />}                
         {booksVolumes &&
           booksVolumes.map(book => <BookVolumeCard key={book.id+book.etag} book={book}/>)
-        }        
-      </Box>      
+        }                
+      </Box>
+      <PaginationBlock
+        page={page}
+        count={Math.ceil(totalItems/30)}
+
+        onChangePage={(page) => {
+          if(query.trim().length) {
+            dispatch(fetchBooksVolumes({query, category, orderBy, page}))
+            setPage(page)
+          }          
+        }}
+        onLoadMore={(page) =>{
+          if(query.trim().length) {
+            dispatch(fetchBooksVolumes({query, category, orderBy, page}))
+            setPage(page)
+          } 
+        }}
+
+      />
+           
     </Container>
   )
 }
