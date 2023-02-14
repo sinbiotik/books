@@ -20,7 +20,6 @@ export function HomePage() {
   const {booksVolumes, totalItems, loading, error} = useAppSelector(
     state => state.booksVolumes
   )
-  // console.log(page)
   const dispatch = useAppDispatch()
 
   const addSearch = () => {
@@ -41,13 +40,16 @@ export function HomePage() {
         onSelectCategory={setCategory}
         onSelectOrderBy={setOrderBy}      
       />
-      <Box>
-        <Typography
-          sx={{textAlign: 'center'}}
-        >
-          A total of <strong>{totalItems}</strong> book volumes were found on request
-        </Typography>
-      </Box>
+      <Box sx={{my: 1, display: 'flex', py: 1, justifyContent: 'center'}}>
+        {loading && <Loader />}
+        {error && <ErrorMessage error={error} />}
+        {booksVolumes &&
+          <Typography>
+            A total of <strong>{totalItems}</strong> book volumes were found on request
+          </Typography>
+        } 
+      </Box> 
+
       <Box
         sx={{
           mt: 1,
@@ -57,32 +59,30 @@ export function HomePage() {
           flexWrap: 'wrap',
           gap: 2,
         }}
-      >
-        {loading && <Loader />}
-        {error && <ErrorMessage error={error} />}                
+      >              
         {booksVolumes &&
-          booksVolumes.map(book => <BookVolumeCard key={book.id+book.etag} book={book}/>)
+          booksVolumes.map(book => <BookVolumeCard key={book.id+book.etag} book={book}/>)          
         }                
       </Box>
-      <PaginationBlock
-        page={page}
-        count={Math.ceil(totalItems/30)}
 
-        onChangePage={(page) => {
-          if(query.trim().length) {
-            dispatch(fetchBooksVolumes({query, category, orderBy, page}))
-            setPage(page)
-          }          
-        }}
-        onLoadMore={(page) =>{
-          if(query.trim().length) {
-            dispatch(fetchBooksVolumes({query, category, orderBy, page}))
-            setPage(page)
-          } 
-        }}
-
-      />
-           
+      { booksVolumes &&
+        <PaginationBlock
+          page={page}
+          count={Math.ceil(totalItems/30)}  // ?????????????
+          onChangePage={(page) => {
+            if(query.trim().length) {
+              dispatch(fetchBooksVolumes({query, category, orderBy, page}))
+              setPage(page)
+            }          
+          }}
+          onLoadMore={(page) =>{
+            if(query.trim().length) {
+              dispatch(fetchBooksVolumes({query, category, orderBy, page}))
+              setPage(page)
+            } 
+          }}
+        />
+      }           
     </Container>
   )
 }

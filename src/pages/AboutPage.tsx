@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/material';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppBarBlock } from '../components/AppBarBlock';
 import { BookInfo } from '../components/BookInfo';
@@ -7,26 +7,32 @@ import { ErrorMessage } from '../components/ErrorMessage';
 import { Loader } from '../components/Loader';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { fetchBook } from '../store/bookSlice';
-import { addBooksVolumesId } from '../store/MyBookshelfSlice';
+import { addBooksVolumesId, removeBooksVolumesId } from '../store/MyBookshelfSlice';
 
 export function AboutPage() {
   const {id} = useParams()
   const dispatch = useAppDispatch()
-  const {book, error, loading} = useAppSelector(state => state.book)
-  // const {booksVolumesId} = useAppSelector(state => state.myBookshelf)
-  
+  const {book, error, loading} = useAppSelector(state => state.book)  
 
   useEffect(() => {
     dispatch(fetchBook(id))
-  }, [])
-
+  }, [dispatch])
+  
   return(
     <Container>
       <AppBarBlock />
-      <Box>
+      <Box sx={{my: 1, display: 'flex', py: 1, justifyContent: 'center'}}>
         {loading && <Loader />}
         {error && <ErrorMessage error={error} />}
-        {book && <BookInfo book={book} onBookVolumeId={()=>dispatch(addBooksVolumesId(book.id))}/>}
+      </Box>
+      <Box>
+        {book && 
+          <BookInfo
+            book={book}
+            onAddBookVolumeId={()=>dispatch(addBooksVolumesId(book.id))}
+            onRemoveBookVolumeId={()=>dispatch(removeBooksVolumesId(book.id))}
+          />
+        }
       </Box>
     </Container>
   )

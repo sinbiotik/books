@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { AppBarBlock } from "../components/AppBarBlock";
 import { BookVolumeCard } from "../components/BookVolumeCard";
@@ -16,8 +16,11 @@ export function MyBookshelf() {
 
   return (
     <Container>
-      <AppBarBlock />     
-
+      <AppBarBlock />
+      <Box sx={{my: 1, display: 'flex', py: 1, justifyContent: 'center'}}>
+        {loading && <Loader />}
+        {error && <ErrorMessage error={error} />} 
+      </Box> 
       <Box
         sx={{
           mt: 1,
@@ -28,10 +31,12 @@ export function MyBookshelf() {
           gap: 2,
         }}
       >
-        {loading && <Loader />}
-        {error && <ErrorMessage error={error} />}                
+              
         {booksVolumes &&
           booksVolumes.map(book => <BookVolumeCard key={book.id+book.etag} book={book}/>)
+        }
+        {!booksVolumes &&
+          <Typography variant="h2">Your bookshelf is empty at the moment</Typography>
         }                
       </Box>
     </Container>    

@@ -8,20 +8,16 @@ interface BookCardProps {
 
 export function BookVolumeCard({book}: BookCardProps) {
   const imageBookList = book.volumeInfo.imageLinks
-  let imageBook: string | undefined
-  if (imageBookList) {
-    if(imageBookList?.large) {
-      imageBook = imageBookList.large
-    } else if(imageBookList?.medium) {
-      imageBook = imageBookList.medium
-    } else if(imageBookList?.small) {
-      imageBook = imageBookList.small
-    } else if(imageBookList?.smallThumbnail) {
-      imageBook = imageBookList.smallThumbnail
-    } else if(imageBookList?.thumbnail) {
-      imageBook = imageBookList?.thumbnail
-    } else imageBook = undefined    
-  }
+  
+  const imageBook =     
+  imageBookList?.large
+  || imageBookList?.medium
+  || imageBookList?.small
+  || imageBookList?.thumbnail
+  || imageBookList?.smallThumbnail 
+  
+  
+
 
   return(
     <Link to={`/about/${book.id}`}>

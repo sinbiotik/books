@@ -3,25 +3,22 @@ import axios, { AxiosError } from 'axios';
 import { IBook } from '../models';
 
 interface MyBookshelfState {
-  booksVolumesId: string [] | null;
+  booksVolumesId: string [];
   booksVolumes: IBook[] | null;
   loading: boolean;
   error: null | string; 
 }
-
 const initialState: MyBookshelfState = {
-  booksVolumesId: ["G1y_5kpmatUC", "71nDBQAAQBAJ", "Efo-EAAAQBAJ"],
+  booksVolumesId: ['omrMoAEACAAJ', 'm9aeJ6bkzbY', 'IiOQEAAAQBAJ'],
   booksVolumes: null,
   loading: false,
   error: null 
 }
-
 export const fetchMyBookshelf = createAsyncThunk<
-  IBook[], undefined, {rejectValue: string, state: {myBookshelf: MyBookshelfState}}
+  IBook[] | undefined, undefined, {rejectValue: string, state: {myBookshelf: MyBookshelfState}}
 >(
   'myBookshelf/fetchMyBookshelf',
   async function (_, {rejectWithValue, getState}) {
-
     try {
       const volumesId = getState().myBookshelf.booksVolumesId
       if (volumesId) {
@@ -31,11 +28,10 @@ export const fetchMyBookshelf = createAsyncThunk<
           ))
         )
         const res = responses.map(response => response.data)
-        return res 
+        // console.log(initialState)
 
-      }
-  
-      // console.log(res)  
+        return res
+      }  
     } catch (e: unknown) {
       const error = e as AxiosError
       return rejectWithValue(error.message)
@@ -48,7 +44,20 @@ const myBookshelfSlice = createSlice({
   initialState: initialState,
   reducers: {
     addBooksVolumesId(state, action) {
+      // if (state.booksVolumesId?.map(id => id === action.payload)){
+      //   return
+      // }
       state.booksVolumesId?.push(action.payload)
+      
+      console.log(action.payload)
+    },
+
+    removeBooksVolumesId(state, action) {
+      if (state.booksVolumesId){
+        state.booksVolumesId = state.booksVolumesId.filter(
+          id => id !== action.payload
+        )
+      }
     }
   },
   extraReducers(builder) {
@@ -57,7 +66,7 @@ const myBookshelfSlice = createSlice({
         state.loading = true
         state.error = null
       })
-      .addCase(fetchMyBookshelf.fulfilled, (state, action) => {
+      .addCase(fetchMyBookshelf.fulfilled, (state, action: PayloadAction<any> ) => {        
         state.loading = false
         state.booksVolumes = action.payload
       })
@@ -67,10 +76,11 @@ const myBookshelfSlice = createSlice({
       })
   },
 })
-
-export const {addBooksVolumesId} = myBookshelfSlice.actions
-
+export const {addBooksVolumesId, removeBooksVolumesId} = myBookshelfSlice.actions
 export default myBookshelfSlice.reducer
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected')
 }
+
+
+

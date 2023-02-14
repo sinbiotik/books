@@ -1,15 +1,21 @@
 import { Button, Card, CardContent, CardMedia, Typography } from "@mui/material"
+import { Box } from "@mui/system";
 import { IBook } from "../models"
 
 interface BookInfoProps {
   book: IBook;
-  onBookVolumeId: (bookVolumeId: string) => void
+  onAddBookVolumeId: (bookVolumeId: string) => void
+  onRemoveBookVolumeId: (bookVolumeId: string) => void
+
 }
 
-export function BookInfo({book, onBookVolumeId}: BookInfoProps) {
-  
-  function onBookVolumeIdHandler() {
-    onBookVolumeId(book.id)
+export function BookInfo({book, onAddBookVolumeId, onRemoveBookVolumeId}: BookInfoProps){  
+  function onAddVolumeIdHandler() {
+    onAddBookVolumeId(book.id)
+  }
+
+  function onRemoveVolumeIdHandler() {
+    onRemoveBookVolumeId(book.id)
   }
 
   const imageBookList = book.volumeInfo.imageLinks
@@ -47,13 +53,30 @@ export function BookInfo({book, onBookVolumeId}: BookInfoProps) {
             {book.volumeInfo.description}
           </Typography>
         }
-        <Button
-          variant="contained"
-          sx={{my: 3, mx: 'auto'}}
-          onClick={onBookVolumeIdHandler}
+        <Box
+          sx={{
+            my: 3, mx: 'auto', display: 'flex',
+            flexWrap: 'wrap', justifyContent: 'space-evenly'
+          }}
         >
-          Add to my bookshelf
-        </Button>
+          <Button
+            variant="contained"
+            sx={{m: 1}}
+            onClick={onAddVolumeIdHandler}
+          >
+            Add to my bookshelf
+          </Button>
+
+          <Button
+            variant="outlined"
+            color="error"
+            sx={{m: 1}}
+            onClick={onRemoveVolumeIdHandler}
+          >
+            Remove to my bookshelf
+          </Button>
+        </Box>
+
       </CardContent>
     </Card>
     
