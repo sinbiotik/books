@@ -5,13 +5,14 @@ import { BookVolumeCard } from "../components/BookVolumeCard";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { Loader } from "../components/Loader";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { fetchMyBookshelf } from "../store/MyBookshelfSlice";
+import { fetchLocalBookshelf } from "../store/localBookshelfSlice";
 
-export function MyBookshelf() {
-  const {booksVolumes, error, loading} = useAppSelector(state => state.myBookshelf)
+export function LocalBookshelf() {
+  const {booksVolumes, error, loading} = useAppSelector(state => state.localBookshelf)
   const dispatch = useAppDispatch()
+  
   useEffect(() => {
-    dispatch(fetchMyBookshelf())
+    dispatch(fetchLocalBookshelf())
   }, [dispatch])
 
   return (
@@ -30,13 +31,12 @@ export function MyBookshelf() {
           flexWrap: 'wrap',
           gap: 2,
         }}
-      >
-              
+      >              
         {booksVolumes &&
           booksVolumes.map(book => <BookVolumeCard key={book.id+book.etag} book={book}/>)
         }
         {!booksVolumes &&
-          <Typography variant="h2">Your bookshelf is empty at the moment</Typography>
+          <Typography variant="h2">Your local bookshelf is empty at the moment</Typography>
         }                
       </Box>
     </Container>    

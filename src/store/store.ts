@@ -10,21 +10,23 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import booksVolumesReduser from './booksVolumesSlice'
-import bookReduser from './bookSlice'
-import myBookshelfReduser from './MyBookshelfSlice'
+import booksVolumesReducer from './booksVolumesSlice'
+import bookReducer from './bookSlice'
+import localBookshelfReducer from './localBookshelfSlice'
+import publicBookshelfReduceer from './publicBookshelfSlice'
 
 
 const rootReducer = combineReducers({
-  booksVolumes: booksVolumesReduser,
-  book: bookReduser,
-  myBookshelf: myBookshelfReduser
+  booksVolumes: booksVolumesReducer,
+  book: bookReducer,
+  localBookshelf: localBookshelfReducer,
+  publicBookshelf: publicBookshelfReduceer
 })
 
 const persistConfig = {
   key: 'root',
   storage: storage,
-  whitelist: ['myBookshelf', 'navigation']
+  whitelist: ['localBookshelf']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

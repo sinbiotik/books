@@ -2,25 +2,27 @@ import { AnyAction, createAsyncThunk, createSlice, PayloadAction } from '@reduxj
 import axios, { AxiosError } from 'axios';
 import { IBook } from '../models';
 
-interface MyBookshelfState {
+interface LocalBookshelfState {
   booksVolumesId: string [];
   booksVolumes: IBook[] | null;
   loading: boolean;
   error: null | string; 
 }
-const initialState: MyBookshelfState = {
-  booksVolumesId: ['omrMoAEACAAJ', 'm9aeJ6bkzbY', 'IiOQEAAAQBAJ'],
+const initialState: LocalBookshelfState = {
+  booksVolumesId: ['omrMoAEACAAJ', 'IiOQEAAAQBAJ'],
   booksVolumes: null,
   loading: false,
   error: null 
 }
-export const fetchMyBookshelf = createAsyncThunk<
-  IBook[] | undefined, undefined, {rejectValue: string, state: {myBookshelf: MyBookshelfState}}
+export const fetchLocalBookshelf = createAsyncThunk<
+  IBook[] | undefined,   // ???????????????????????
+  undefined,
+  {rejectValue: string, state: {localBookshelf: LocalBookshelfState}}
 >(
-  'myBookshelf/fetchMyBookshelf',
+  'localBookshelf/fetchLocalBookshelf',
   async function (_, {rejectWithValue, getState}) {
     try {
-      const volumesId = getState().myBookshelf.booksVolumesId
+      const volumesId = getState().localBookshelf.booksVolumesId
       if (volumesId) {
         const responses = await Promise.all(
           volumesId.map((id: string) => axios.get(
@@ -29,7 +31,6 @@ export const fetchMyBookshelf = createAsyncThunk<
         )
         const res = responses.map(response => response.data)
         // console.log(initialState)
-
         return res
       }  
     } catch (e: unknown) {
@@ -39,20 +40,20 @@ export const fetchMyBookshelf = createAsyncThunk<
   }
 )
 
-const myBookshelfSlice = createSlice({
-  name: 'myBookshelf',
+const localBookshelfSlice = createSlice({
+  name: 'localBookshelf',
   initialState: initialState,
   reducers: {
-    addBooksVolumesId(state, action) {
+    addLocalBooksVolumesId(state, action) {
       // if (state.booksVolumesId?.map(id => id === action.payload)){
       //   return
       // }
       state.booksVolumesId?.push(action.payload)
       
-      console.log(action.payload)
+      // console.log(action.payload)
     },
 
-    removeBooksVolumesId(state, action) {
+    removeLocalBooksVolumesId(state, action) {
       if (state.booksVolumesId){
         state.booksVolumesId = state.booksVolumesId.filter(
           id => id !== action.payload
@@ -62,11 +63,11 @@ const myBookshelfSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchMyBookshelf.pending, (state) => {
+      .addCase(fetchLocalBookshelf.pending, (state) => {
         state.loading = true
         state.error = null
       })
-      .addCase(fetchMyBookshelf.fulfilled, (state, action: PayloadAction<any> ) => {        
+      .addCase(fetchLocalBookshelf.fulfilled, (state, action: PayloadAction<any> ) => {        
         state.loading = false
         state.booksVolumes = action.payload
       })
@@ -76,8 +77,8 @@ const myBookshelfSlice = createSlice({
       })
   },
 })
-export const {addBooksVolumesId, removeBooksVolumesId} = myBookshelfSlice.actions
-export default myBookshelfSlice.reducer
+export const {addLocalBooksVolumesId, removeLocalBooksVolumesId} = localBookshelfSlice.actions
+export default localBookshelfSlice.reducer
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected')
 }

@@ -6,10 +6,14 @@ interface BookInfoProps {
   book: IBook;
   onAddBookVolumeId: (bookVolumeId: string) => void
   onRemoveBookVolumeId: (bookVolumeId: string) => void
+  onRemovePublicVolumeId: (bookVolumeId: string) => void
+
 
 }
 
-export function BookInfo({book, onAddBookVolumeId, onRemoveBookVolumeId}: BookInfoProps){  
+export function BookInfo(
+  {book, onAddBookVolumeId, onRemoveBookVolumeId, onRemovePublicVolumeId}: BookInfoProps
+){  
   function onAddVolumeIdHandler() {
     onAddBookVolumeId(book.id)
   }
@@ -18,10 +22,15 @@ export function BookInfo({book, onAddBookVolumeId, onRemoveBookVolumeId}: BookIn
     onRemoveBookVolumeId(book.id)
   }
 
+  function onRemovePublicVolumeIdHandler() {
+    onRemovePublicVolumeId(book.id)
+    console.log(book.id)
+
+  }
+
   const imageBookList = book.volumeInfo.imageLinks
-  const imageBook =     
-    imageBookList?.large
-    || imageBookList?.medium
+  const imageBook =   
+    imageBookList?.medium
     || imageBookList?.small
     || imageBookList?.thumbnail
     || imageBookList?.smallThumbnail 
@@ -64,7 +73,7 @@ export function BookInfo({book, onAddBookVolumeId, onRemoveBookVolumeId}: BookIn
             sx={{m: 1}}
             onClick={onAddVolumeIdHandler}
           >
-            Add to my bookshelf
+            Add to local bookshelf
           </Button>
 
           <Button
@@ -73,7 +82,16 @@ export function BookInfo({book, onAddBookVolumeId, onRemoveBookVolumeId}: BookIn
             sx={{m: 1}}
             onClick={onRemoveVolumeIdHandler}
           >
-            Remove to my bookshelf
+            Remove to local bookshelf
+          </Button>
+
+          <Button
+            variant="outlined"
+            color="error"
+            sx={{m: 1}}
+            onClick={onRemovePublicVolumeIdHandler}
+          >
+            Remove to public bookshelf
           </Button>
         </Box>
 

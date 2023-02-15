@@ -42,7 +42,7 @@ export const fetchBooksVolumes = createAsyncThunk<
       )
       const response: IBook[] = responses.data.items
       const totalItems: number = responses.data.totalItems
-      // console.log(response)  
+      console.log(response)  
       return ({response, totalItems})
     } catch (e: unknown) {      
       const error = e as AxiosError

@@ -7,7 +7,8 @@ import { ErrorMessage } from '../components/ErrorMessage';
 import { Loader } from '../components/Loader';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { fetchBook } from '../store/bookSlice';
-import { addBooksVolumesId, removeBooksVolumesId } from '../store/MyBookshelfSlice';
+import { addLocalBooksVolumesId, removeLocalBooksVolumesId } from '../store/localBookshelfSlice';
+import { deletePublicBook } from '../store/publicBookshelfSlice';
 
 export function AboutPage() {
   const {id} = useParams()
@@ -29,8 +30,9 @@ export function AboutPage() {
         {book && 
           <BookInfo
             book={book}
-            onAddBookVolumeId={()=>dispatch(addBooksVolumesId(book.id))}
-            onRemoveBookVolumeId={()=>dispatch(removeBooksVolumesId(book.id))}
+            onAddBookVolumeId={()=>dispatch(addLocalBooksVolumesId(book.id))}
+            onRemoveBookVolumeId={()=>dispatch(removeLocalBooksVolumesId(book.id))}
+            onRemovePublicVolumeId={()=>dispatch(deletePublicBook(book.id))}
           />
         }
       </Box>
