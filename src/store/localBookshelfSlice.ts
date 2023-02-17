@@ -76,8 +76,13 @@ const localBookshelfSlice = createSlice({
       })
   },
 })
-export const {addLocalBooksVolumesId, removeLocalBooksVolumesId} = localBookshelfSlice.actions
+export const {
+  addLocalBooksVolumesId,
+  removeLocalBooksVolumesId
+} = localBookshelfSlice.actions
+
 export default localBookshelfSlice.reducer
+
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected')
 }

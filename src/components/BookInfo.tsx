@@ -1,23 +1,38 @@
+import { useState } from 'react';
 import { Button, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { Box } from "@mui/system";
 import { IBook } from "../models"
 
 interface BookInfoProps {
   book: IBook;
+  booksVolumesId: string [];
   onAddBookVolumeId: (id: string) => void
   onRemoveBookVolumeId: (id: string) => void
   onRemovePublicVolumeId: (id: string) => void
 }
 
-export function BookInfo(
-  {book, onAddBookVolumeId, onRemoveBookVolumeId, onRemovePublicVolumeId}: BookInfoProps
-){  
+export function BookInfo({
+  book, booksVolumesId, onAddBookVolumeId, onRemoveBookVolumeId, onRemovePublicVolumeId
+}: BookInfoProps){
+  // const [localBtn, setLocalBtn] = useState(false)
+  const volumeId = booksVolumesId.find(id => id === book.id)
+  // console.log(volumeId)
+
+  
   function onAddVolumeIdHandler() {
-    onAddBookVolumeId(book.id)
+    // setLocalBtn(prev => !prev)
+    if(!volumeId) {
+      onAddBookVolumeId(book.id)
+      console.log(book.id)
+    }
   }
 
   function onRemoveVolumeIdHandler() {
-    onRemoveBookVolumeId(book.id)
+    // setLocalBtn(prev => !prev)
+    if(volumeId) {
+      onRemoveBookVolumeId(book.id)
+      console.log(book.id)
+    }
   }
 
   function onRemovePublicVolumeIdHandler() {
@@ -69,22 +84,26 @@ export function BookInfo(
             flexWrap: 'wrap', justifyContent: 'space-evenly'
           }}
         >
-          <Button
-            variant="contained"
-            sx={{m: 1}}
-            onClick={onAddVolumeIdHandler}
-          >
-            Add to local bookshelf
-          </Button>
+          {!volumeId &&
+            <Button
+              variant="contained"
+              sx={{m: 1}}
+              onClick={onAddVolumeIdHandler}
+            >
+              Add to local bookshelf
+            </Button>
+          }
 
-          <Button
-            variant="outlined"
-            color="error"
-            sx={{m: 1}}
-            onClick={onRemoveVolumeIdHandler}
-          >
-            Remove to local bookshelf
-          </Button>
+          {volumeId &&
+            <Button
+              variant="outlined"
+              color="error"
+              sx={{m: 1}}
+              onClick={onRemoveVolumeIdHandler}
+            >
+              Remove to local bookshelf
+            </Button>
+          }
 
           <Button
             variant="outlined"

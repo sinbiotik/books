@@ -22,7 +22,7 @@ export const fetchBook = createAsyncThunk<
     try {      
       const response = await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`)
       const res: IBook = response.data  
-      console.log(res)  
+      // console.log(res)  
       return res
     } catch (e: unknown) {      
       const error = e as AxiosError

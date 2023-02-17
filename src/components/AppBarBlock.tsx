@@ -14,12 +14,10 @@ export function AppBarBlock() {
     <Box sx={{ display: 'flex', mb: 12 }}>
       <CssBaseline />
       <AppBar component="nav">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
+        <Toolbar
+         sx={{display: 'flex', justifyContent: 'space-between'}}
+        >
+          <Typography variant="h6" component="div">
             BOOKS
           </Typography>
           <Box sx={{display: { xs: 'none', sm: 'block'}}}>
@@ -32,9 +30,9 @@ export function AppBarBlock() {
               <Button sx={{ color: '#fff', ml: 2 }}>Local bookshelf</Button>
             </Link>
 
-            <Link to={`/publicbookshelf`}>
+            {/* <Link to={`/publicbookshelf`}>
               <Button sx={{ color: '#fff', ml: 2 }}>Public bookshelf</Button>
-            </Link>
+            </Link> */}
             
           </Box>
         </Toolbar>
