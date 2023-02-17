@@ -30,9 +30,9 @@ export function AboutPage() {
         {book && 
           <BookInfo
             book={book}
-            onAddBookVolumeId={()=>dispatch(addLocalBooksVolumesId(book.id))}
-            onRemoveBookVolumeId={()=>dispatch(removeLocalBooksVolumesId(book.id))}
-            onRemovePublicVolumeId={()=>dispatch(deletePublicBook(book.id))}
+            onAddBookVolumeId={(id)=>dispatch(addLocalBooksVolumesId(id))}
+            onRemoveBookVolumeId={(id)=>dispatch(removeLocalBooksVolumesId(id))}
+            onRemovePublicVolumeId={(id)=>dispatch(deletePublicBook(id))}
           />
         }
       </Box>

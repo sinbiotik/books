@@ -3,18 +3,22 @@ import { IBook } from '../models';
 import { AnyAction, createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface BooksVolumesState {
+  query: string;
   booksVolumes: IBook[] | null;
-  // query: string,
-  // page: number,
+  category: string;
+  orderBy: string;
+  page: number;
   totalItems: number;
   loading: boolean;
   error: null | string; 
 }
 
 const initialState: BooksVolumesState = {
+  query: '',
   booksVolumes: null,
-  // query: '',
-  // page: 0,
+  category: 'all',
+  orderBy: 'relevance',
+  page: 1,
   totalItems: 0,
   loading: false,
   error: null,
@@ -28,6 +32,7 @@ export const fetchBooksVolumes = createAsyncThunk<
   'booksVolumes/fetchBooksVolumes',
   async function({query, category, orderBy, page}, {rejectWithValue}) {
     try {
+      console.log(query)
       let subject: string
       if(category === 'all') {
         subject = ''
@@ -37,7 +42,8 @@ export const fetchBooksVolumes = createAsyncThunk<
       const order = `&orderBy=${orderBy}`
       const startIndex = page * 30
       const responses = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}${subject}${order}`,
+        `https://www.googleapis.com/books/v1/volumes?`+
+        `q=${encodeURIComponent(query)}${subject}${order}`,
         {params: {startIndex, maxResults: 30}}
       )
       const response: IBook[] = responses.data.items
@@ -54,14 +60,34 @@ export const fetchBooksVolumes = createAsyncThunk<
 const booksVolumesSlice = createSlice({
   name: 'booksVolumes',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    inputQuery(state, action: PayloadAction<string>){
+      console.log(encodeURIComponent(action.payload))
+      state.query = action.payload
+      state.page = 1
+    },
+    selectCategory(state, action: PayloadAction<string>) {
+      state.category = action.payload
+      state.page = 1
+    },
+    selectOrderBy(state, action: PayloadAction<string>) {
+      state.orderBy = action.payload
+      state.page = 1
+    },
+    setPage(state, action: PayloadAction<number>) {
+      state.page = action.payload
+    }
+    
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchBooksVolumes.pending, (state) => {
+        state.totalItems = 0
+        state.booksVolumes = null
         state.loading = true
         state.error = null
       })
-      .addCase(fetchBooksVolumes.fulfilled, (state, action) => {
+      .addCase(fetchBooksVolumes.fulfilled, (state, action) => {        
         state.loading = false
         state.booksVolumes = action.payload.response
         state.totalItems = action.payload.totalItems
@@ -72,7 +98,12 @@ const booksVolumesSlice = createSlice({
       })
   },
 })
+export const {
+  selectCategory, selectOrderBy, inputQuery, setPage
+} = booksVolumesSlice.actions
+
 export default booksVolumesSlice.reducer
+
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected')
 }

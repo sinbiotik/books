@@ -44,16 +44,14 @@ const localBookshelfSlice = createSlice({
   name: 'localBookshelf',
   initialState: initialState,
   reducers: {
-    addLocalBooksVolumesId(state, action) {
+    addLocalBooksVolumesId(state, action: PayloadAction<string>) {
       // if (state.booksVolumesId?.map(id => id === action.payload)){
       //   return
       // }
       state.booksVolumesId?.push(action.payload)
-      
-      // console.log(action.payload)
     },
 
-    removeLocalBooksVolumesId(state, action) {
+    removeLocalBooksVolumesId(state, action: PayloadAction<string>) {
       if (state.booksVolumesId){
         state.booksVolumesId = state.booksVolumesId.filter(
           id => id !== action.payload
@@ -67,6 +65,7 @@ const localBookshelfSlice = createSlice({
         state.loading = true
         state.error = null
       })
+      //                                                               ???????????
       .addCase(fetchLocalBookshelf.fulfilled, (state, action: PayloadAction<any> ) => {        
         state.loading = false
         state.booksVolumes = action.payload

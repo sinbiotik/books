@@ -1,4 +1,4 @@
-import { Box, Input, Button } from "@mui/material"
+import { Box, Input, Button, TextField } from "@mui/material"
 
 interface InputFieldProps {
   query: string;
@@ -20,31 +20,32 @@ export function QueryField({query, onInput, onSubmit}: InputFieldProps) {
 
   return (
     <Box
+      component="form"
+      onSubmit={(e) => {e.preventDefault()}}
       sx={{        
         py: 2,
         display: 'flex',
-        flexDirection: 'column',
         gap: 2,
-        alignItems: 'center',
+        justifyContent: 'center',
         flexWrap: 'wrap',
+        '& > :not(style)': { m: 1 },
       }}
+      noValidate
+      // autoComplete="off"
     >
-      <form
-        onSubmit={(e) => {e.preventDefault()}}
+      <TextField
+        variant="standard"
+        label="Select book title"          
+        sx={{ mb: 1, width: 350 }}
+        value={query}
+        onChange={changeHandler}
+        onKeyDown={keyDownHandler}
+      />        
+      <Button
+        onClick={onSubmit}
       >
-        <Input
-          placeholder="Select book title"          
-          sx={{ mb: 1, width: 350 }}
-          value={query}
-          onChange={changeHandler}
-          onKeyDown={keyDownHandler}
-        />        
-        <Button
-          onClick={onSubmit}
-        >
-          Search
-        </Button>
-      </form>
+        Search
+      </Button>
 
     </Box>
   )

@@ -4,11 +4,9 @@ import { IBook } from "../models"
 
 interface BookInfoProps {
   book: IBook;
-  onAddBookVolumeId: (bookVolumeId: string) => void
-  onRemoveBookVolumeId: (bookVolumeId: string) => void
-  onRemovePublicVolumeId: (bookVolumeId: string) => void
-
-
+  onAddBookVolumeId: (id: string) => void
+  onRemoveBookVolumeId: (id: string) => void
+  onRemovePublicVolumeId: (id: string) => void
 }
 
 export function BookInfo(
@@ -25,7 +23,6 @@ export function BookInfo(
   function onRemovePublicVolumeIdHandler() {
     onRemovePublicVolumeId(book.id)
     console.log(book.id)
-
   }
 
   const imageBookList = book.volumeInfo.imageLinks
@@ -38,15 +35,19 @@ export function BookInfo(
   return(
     <Card
       variant="outlined"
-      sx={{ width: 'auto', minHeight: 1080, my: 2, backgroundColor: '#dbe9ec'}}
+      sx={{ width: 'auto', minHeight: 1080, my: 2, 
+          boxShadow: '0 0 10px 5px rgba(221, 221, 221, 1)',
+        }}
     >
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2}}>
-        <Typography sx={{my: 1 }} variant="h4">
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, px: 5,}}>
+        <Typography sx={{my: 1, mx: 'auto' }} variant="h4">
           {book.volumeInfo.title}
         </Typography>
         <CardMedia
           component="img"
-          sx={{ height: 500, width: 320, mx: 'auto', my: 2 }}          
+          sx={{ height: 480, width: 320, mx: 'auto', my: 2,
+            boxShadow: '7px 7px 10px 5px rgba(0, 0, 0, .5)', 
+          }}          
           image={imageBook}
           alt={book.volumeInfo.title}
         />

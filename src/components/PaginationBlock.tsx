@@ -5,18 +5,16 @@ interface PaginationBlockProps {
   count: number;
   page: number;
   onChangePage: (page: number) => void;
-  onLoadMore: (page: number) => void;
-
 }
 
-export function PaginationBlock({page, count, onChangePage, onLoadMore}: PaginationBlockProps) {  
+export function PaginationBlock({page, count, onChangePage}: PaginationBlockProps) {  
 
   function handleChange(e: React.ChangeEvent<unknown>, page: number) {
     onChangePage(page)
   }
 
   function handleLoadMore() {
-    onLoadMore(page + 1)
+    onChangePage(page + 1)
   }
 
   return(
