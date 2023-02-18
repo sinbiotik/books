@@ -4,18 +4,18 @@ import { IBook } from '../models';
 
 interface LocalBookshelfState {
   booksVolumesId: string [];
-  booksVolumes: IBook[] | null;
+  booksVolumes: IBook[];
   loading: boolean;
   error: null | string; 
 }
 const initialState: LocalBookshelfState = {
   booksVolumesId: ['omrMoAEACAAJ', 'IiOQEAAAQBAJ'],
-  booksVolumes: null,
+  booksVolumes: [],
   loading: false,
   error: null 
 }
 export const fetchLocalBookshelf = createAsyncThunk<
-  IBook[] | undefined,   // ???????????????????????
+  IBook[], 
   undefined,
   {rejectValue: string, state: {localBookshelf: LocalBookshelfState}}
 >(
@@ -32,7 +32,8 @@ export const fetchLocalBookshelf = createAsyncThunk<
         const res = responses.map(response => response.data)
         // console.log(initialState)
         return res
-      }  
+      } 
+      return [] 
     } catch (e: unknown) {
       const error = e as AxiosError
       return rejectWithValue(error.message)
@@ -45,9 +46,9 @@ const localBookshelfSlice = createSlice({
   initialState: initialState,
   reducers: {
     addLocalBooksVolumesId(state, action: PayloadAction<string>) {
-      // if (state.booksVolumesId?.map(id => id === action.payload)){
-      //   return
-      // }
+      if (state.booksVolumesId?.find(id => id === action.payload)){
+        return
+      }
       state.booksVolumesId?.push(action.payload)
     },
 
@@ -65,8 +66,8 @@ const localBookshelfSlice = createSlice({
         state.loading = true
         state.error = null
       })
-      //                                                               ???????????
-      .addCase(fetchLocalBookshelf.fulfilled, (state, action: PayloadAction<any> ) => {        
+      //                                                               
+      .addCase(fetchLocalBookshelf.fulfilled, (state, action: PayloadAction<IBook[]> ) => {        
         state.loading = false
         state.booksVolumes = action.payload
       })

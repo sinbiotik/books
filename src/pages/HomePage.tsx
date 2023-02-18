@@ -21,7 +21,7 @@ export function HomePage() {
   const addSearch = () => {
     //       ?????
     if(query.trim().length) {
-      dispatch(fetchBooksVolumes({query, category, orderBy, page}))
+      dispatch(fetchBooksVolumes())
     }    
   }
 
@@ -70,11 +70,11 @@ export function HomePage() {
       {booksVolumes &&
         <PaginationBlock
           page={page}
-          count={Math.ceil(totalItems/30)}  // ?????????????
+          count={Math.ceil(totalItems/30)}
           onChangePage={(page) => {
             dispatch(setPage(page))
             if(query.trim().length) {
-              dispatch(fetchBooksVolumes({query, category, orderBy, page}))
+              dispatch(fetchBooksVolumes())
             }          
           }}
         />

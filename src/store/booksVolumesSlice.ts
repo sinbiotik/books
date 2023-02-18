@@ -1,3 +1,4 @@
+import { RootState } from './store';
 import axios, { AxiosError } from 'axios';
 import { IBook } from '../models';
 import { AnyAction, createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
@@ -26,12 +27,13 @@ const initialState: BooksVolumesState = {
 
 export const fetchBooksVolumes = createAsyncThunk<
   {response: IBook[], totalItems: number},
-  {query: string, category: string, orderBy: string, page: number},
-  {rejectValue: string}
+  undefined,
+  {rejectValue: string, state: RootState}
 >(
   'booksVolumes/fetchBooksVolumes',
-  async function({query, category, orderBy, page}, {rejectWithValue}) {
+  async function(_, {rejectWithValue, getState}) {
     try {
+      const {query, category, orderBy, page} = getState().booksVolumes
       console.log(query)
       let subject: string
       if(category === 'all') {
@@ -40,15 +42,16 @@ export const fetchBooksVolumes = createAsyncThunk<
         subject = `+subject:${category}`
       }
       const order = `&orderBy=${orderBy}`
-      const startIndex = page * 30
+      const startIndex = (page - 1) * 30
       const responses = await axios.get(
         `https://www.googleapis.com/books/v1/volumes?`+
         `q=${encodeURIComponent(query)}${subject}${order}`,
         {params: {startIndex, maxResults: 30}}
       )
       const response: IBook[] = responses.data.items
+      
       const totalItems: number = responses.data.totalItems
-      console.log(response)  
+      console.log(responses)  
       return ({response, totalItems})
     } catch (e: unknown) {      
       const error = e as AxiosError

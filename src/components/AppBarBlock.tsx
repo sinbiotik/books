@@ -30,9 +30,9 @@ export function AppBarBlock() {
               <Button sx={{ color: '#fff', ml: 2 }}>Local bookshelf</Button>
             </Link>
 
-            {/* <Link to={`/publicbookshelf`}>
+            <Link to={`/publicbookshelf`}>
               <Button sx={{ color: '#fff', ml: 2 }}>Public bookshelf</Button>
-            </Link> */}
+            </Link>
             
           </Box>
         </Toolbar>

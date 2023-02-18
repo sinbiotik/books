@@ -15,6 +15,7 @@ const initialState: PublicBookshelfState = {
   error: null,
 }
 
+const BOOKSHELF_FAVORITE = 0
 export const fetchPublicBookshelf = createAsyncThunk<
   IBook[],
   undefined,
@@ -24,7 +25,7 @@ export const fetchPublicBookshelf = createAsyncThunk<
   async function(_, {rejectWithValue}) {
     try {
       const userId = `109777769115173013396`
-      const bookshelfId = `0`
+      const bookshelfId = BOOKSHELF_FAVORITE
       const APIKey = `AIzaSyCsJ17xcbR7PRSvKKXlMdpWTeRl_bU4JsU`
 
       const responses = await axios.get(

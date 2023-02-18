@@ -14,22 +14,16 @@ interface BookInfoProps {
 export function BookInfo({
   book, booksVolumesId, onAddBookVolumeId, onRemoveBookVolumeId, onRemovePublicVolumeId
 }: BookInfoProps){
-  // const [localBtn, setLocalBtn] = useState(false)
-  const volumeId = booksVolumesId.find(id => id === book.id)
-  // console.log(volumeId)
-
-  
-  function onAddVolumeIdHandler() {
-    // setLocalBtn(prev => !prev)
-    if(!volumeId) {
+  const isAdded = booksVolumesId.some(id => id === book.id)  
+  function handleAddVolumeId() {
+    if(!isAdded) {
       onAddBookVolumeId(book.id)
       console.log(book.id)
     }
   }
 
-  function onRemoveVolumeIdHandler() {
-    // setLocalBtn(prev => !prev)
-    if(volumeId) {
+  function handleRemoveVolumeId() {
+    if(isAdded) {
       onRemoveBookVolumeId(book.id)
       console.log(book.id)
     }
@@ -84,22 +78,22 @@ export function BookInfo({
             flexWrap: 'wrap', justifyContent: 'space-evenly'
           }}
         >
-          {!volumeId &&
+          {!isAdded &&
             <Button
               variant="contained"
               sx={{m: 1}}
-              onClick={onAddVolumeIdHandler}
+              onClick={handleAddVolumeId}
             >
               Add to local bookshelf
             </Button>
           }
 
-          {volumeId &&
+          {isAdded &&
             <Button
               variant="outlined"
               color="error"
               sx={{m: 1}}
-              onClick={onRemoveVolumeIdHandler}
+              onClick={handleRemoveVolumeId}
             >
               Remove to local bookshelf
             </Button>
