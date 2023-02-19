@@ -26,7 +26,7 @@ export function HomePage() {
   }
 
   return(
-    <Container>
+    <Container maxWidth='xl'>
       <AppBarBlock />
 
       <QueryField

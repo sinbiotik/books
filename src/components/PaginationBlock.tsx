@@ -38,6 +38,8 @@ export function PaginationBlock({page, count, onChangePage}: PaginationBlockProp
         page={page}        
         onChange={handleChange}
         count={count}
+        showFirstButton
+        showLastButton
       />
     </Box>
   )

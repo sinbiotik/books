@@ -16,7 +16,7 @@ export function LocalBookshelf() {
   }, [dispatch])
 
   return (
-    <Container>
+    <Container maxWidth='xl'>
       <AppBarBlock />
       <Box sx={{my: 1, display: 'flex', py: 1, justifyContent: 'center'}}>
         {loading && <Loader />}
