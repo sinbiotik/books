@@ -99,14 +99,14 @@ export function BookInfo({
             </Button>
           }
 
-          <Button
+          {/* <Button
             variant="outlined"
             color="error"
             sx={{m: 1}}
             onClick={onRemovePublicVolumeIdHandler}
           >
             Remove to public bookshelf
-          </Button>
+          </Button> */}
         </Box>
 
       </CardContent>

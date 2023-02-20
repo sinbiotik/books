@@ -13,7 +13,7 @@ import { deletePublicBook } from '../store/publicBookshelfSlice';
 export function AboutPage() {
   const {id} = useParams()
   const dispatch = useAppDispatch()
-  const {book, error, loading, } = useAppSelector(state => state.book)
+  const {book, error, loading } = useAppSelector(state => state.book)
   const {booksVolumesId}   = useAppSelector(state => state.localBookshelf)
 
   useEffect(() => {

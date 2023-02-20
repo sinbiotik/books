@@ -14,10 +14,9 @@ import { PaginationBlock } from "../components/PaginationBlock";
 export function HomePage() {
   const {
     booksVolumes, totalItems, loading, error, category, orderBy, query, page
-  } = useAppSelector( state => state.booksVolumes )
-  
+  } = useAppSelector( state => state.booksVolumes )  
   const dispatch = useAppDispatch()
-
+  
   const addSearch = () => {
     //       ?????
     if(query.trim().length) {
@@ -33,15 +32,13 @@ export function HomePage() {
         query={query}
         onInput={(value) => {dispatch(inputQuery(value))}}
         onSubmit={addSearch}
-      />
-      
+      />      
       <FiltersBlock
         category={category}
         orderBy={orderBy}
         onSelectCategory={(value) => {dispatch(selectCategory(value))}}
         onSelectOrderBy={(value) => {dispatch(selectOrderBy(value))}}      
       />
-
       <Box sx={{my: 1, display: 'flex', py: 1, justifyContent: 'center'}}>
         {loading && <Loader />}
         {error && <ErrorMessage error={error} />}
@@ -51,20 +48,15 @@ export function HomePage() {
           </Typography>
         } 
       </Box> 
-
-      <Box
-        sx={{
-          mt: 1,
-          py: 1,
-          display: 'flex',
-          justifyContent: 'space-evenly',
+      <Box 
+        sx={{ mt: 1, py: 1, display: 'flex', justifyContent: 'space-evenly',
           flexWrap: 'wrap',
           gap: 2,
         }}
       >              
-        {booksVolumes &&
-          booksVolumes.map(book => <BookVolumeCard key={book.id+book.etag} book={book}/>)          
-        }                
+        {booksVolumes && booksVolumes.map(
+          book => <BookVolumeCard key={book.id+book.etag} book={book}/>
+        )}                
       </Box>
 
       {booksVolumes &&
