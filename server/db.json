@@ -570,7 +570,7 @@
     {
       "kind": "books#volume",
       "id": "FrtLEAAAQBAJ",
-      "etag": "afexs6i0f4k",
+      "etag": "U7jC38ZMd0Y",
       "selfLink": "https://www.googleapis.com/books/v1/volumes/FrtLEAAAQBAJ",
       "volumeInfo": {
         "title": "Эффективный C. Профессиональное программирование",
@@ -608,12 +608,12 @@
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71Vm7NP-NjmF1Vu9EcmXgDJF2z7_mwMNqiCCySjU9-lXB4O5wfgGhpnqY2EYBcFeKwtub8FtIaMpNLSBxRHoKu3KQD8jgRBib4YXWd0irDrqWp138WUqGXidAE4K8CgQkZMUtxe&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73m49xB2zPRsOrF3g70L492uztGkAZu06lBWhtBVuEMPHTw6vU-x6ziYna-BCHZhCzoKu1pIkNA7MlIuZIxpeNmLRT_NOlY_xcVfnka1Ct5gIJhBFs1GIzpqYElWUzpNUpRhGq6&source=gbs_api",
-          "small": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73YWyXo7eveUfdfReW31pE_W_CjB8Fuv0fNmVfYLbunuePIRiUCOU-s3tpAJwg45NEN9P0bosCyZyXqq5GhVsKbvqlP8QNk_rYWPnoIGgkAl1w4quJc6obYOQHwuL3txYYqtb-C&source=gbs_api",
-          "medium": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72p8dUntM3qtxvpKHqvXzspXlgSEU1IHfBwimAnvOwX_gxEHbVkU-OkF2iBa0fWrwoVaiKDUlK8XCQevk54AHCTbWW1J5YJYECZkXv35GQ_7ohEWbE6Yp_7lqXMYowXhy38v5o6&source=gbs_api",
-          "large": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE71HeBGY6zTNJg32waqo6KeWQVAIb-3Rnw5wbGQAvEhJXelRoEIX1TUfi-LNjKVPDQWwuOtCwIL1pqgX7keqZWuLB0qbIZ9IgkSwVyDnVvczWuz0bA11_n6mm7sbdo_l-Z7qyWjX&source=gbs_api",
-          "extraLarge": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE703dzDt4G5_C_Y-m6fLyCRpeZbA_fppW0w967ThZ7Nf1W6N3bN3Vc28pspb9vIJ2Qfetg8TLIENkjzF6TGa_T2zqjTsRVWNPdNq10dJJainze_IR6371fNrX58Ppuz9zcEiX_qf&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70wNeGMMXqBwL7-_3fhW4Xu6IMHzGnesVanxV3pPMZjLPBMLKA83rQJeKS-eyVGBtTuhizmxLrgWo5y4Bibq8tslB_DYibz2lleH7U2--4a8KWmgjddDpwMaRhaP4Kjxwo6KAMJ&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72DpDVNFryWUse2ZZVRNEMDZIuYj17VfnpOuE-hcx4_JcrCX4or_YFI4a-oo4u1ba3x92g1UaXrQV9PNxK5pAEUsBGtRhP7Be2D2ilHIgiVDZB1a-7CgARFcUh3aJYwVXPAqvd8&source=gbs_api",
+          "small": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70e5V7TjYVv3b-aJXql2JZRuOXO5WmOgQGFEmqfYKHuyaQi_2rTkI9ovEbmdqkA8kCm-ZwStkmopKpyouQuZIs10NfvXVkzk-3R6gTB37p04voRIZO2A9yd47oidThQ1KyeVzkY&source=gbs_api",
+          "medium": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE707nT8NP3ZVUrHbvyV5Zk0IPKeOSYFpa2SJXwzVzilEY-W-tbIbtOlwyVBqADXk0WmOivLoZFf_hri5knYiS-fPFm7VcsyNVhTORgwgRLZHC6JhwrVK7uzmBMbtWvyehbFF9sBK&source=gbs_api",
+          "large": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73rcz4dGncj0CTYn8QzUQpwyFoKUX38TdSkW__jPDfirhsLx0oybWsJnwCurqxYeTT-CRB9j1WEjxWqXCfc5uAadU7uuch0JCb3tT7PBDiV4IkDl3TabuD1DCr3rgHOQBqYeKnT&source=gbs_api",
+          "extraLarge": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE71tpzpgKg2q0QQmMoFiFu1OkesbQ4-YPmGbzQV1Xy9kDaYhAErG3zqjOl_2AzsKBWOsD9q2QQkrtI50qO2SKlrK-sXalXxTUVbnx2fnK33vGZMdhzoVBwqPwhNQj6JmGwdeUOyj&source=gbs_api"
         },
         "language": "ru",
         "previewLink": "http://books.google.ru/books?id=FrtLEAAAQBAJ&hl=&source=gbs_api",

@@ -13,7 +13,7 @@ export function PublicBookshelf() {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchPublicBookshelf())
-  }, [])
+  }, [dispatch])
   return(
     <Container maxWidth='xl'>
       <AppBarBlock/>

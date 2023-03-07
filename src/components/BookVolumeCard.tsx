@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Paper, Typography } from "@mui/material"
+import { Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 import { IBook } from "../models"
 
