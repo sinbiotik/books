@@ -26,7 +26,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage: storage,
-  whitelist: ['localBookshelf']
+  whitelist: ['localBookshelf', 'publicBookshelf']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

@@ -7,14 +7,15 @@ import { ErrorMessage } from '../components/ErrorMessage';
 import { Loader } from '../components/Loader';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { fetchBook } from '../store/bookSlice';
-import { addLocalBooksVolumesId, removeLocalBooksVolumesId } from '../store/localBookshelfSlice';
-import { deletePublicBook } from '../store/publicBookshelfSlice';
+import { addLocalBooksId, removeLocalBooksId } from '../store/localBookshelfSlice';
+import { addPublicBook, removePublicBook } from '../store/publicBookshelfSlice';
 
 export function AboutPage() {
   const {id} = useParams()
   const dispatch = useAppDispatch()
   const {book, error, loading } = useAppSelector(state => state.book)
   const {booksVolumesId}   = useAppSelector(state => state.localBookshelf)
+  const {booksVolumes} = useAppSelector(state => state.publicBookshelf)
 
   useEffect(() => {
     dispatch(fetchBook(id))
@@ -32,9 +33,11 @@ export function AboutPage() {
           <BookInfo            
             book={book}
             booksVolumesId={booksVolumesId}
-            onAddBookVolumeId={(id)=>dispatch(addLocalBooksVolumesId(id))}
-            onRemoveBookVolumeId={(id)=>dispatch(removeLocalBooksVolumesId(id))}
-            onRemovePublicVolumeId={(id)=>dispatch(deletePublicBook(id))}
+            booksVolumes={booksVolumes}
+            onAddBookId={(id)=>dispatch(addLocalBooksId(id))}
+            onRemoveBookId={(id)=>dispatch(removeLocalBooksId(id))}
+            onAddPublicVolume={(book)=>dispatch(addPublicBook(book))}
+            onRemovePublicId={(id)=>dispatch(removePublicBook(id))}
           />
         }
       </Box>

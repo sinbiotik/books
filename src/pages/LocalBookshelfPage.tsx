@@ -23,13 +23,8 @@ export function LocalBookshelf() {
         {error && <ErrorMessage error={error} />} 
       </Box> 
       <Box
-        sx={{
-          mt: 1,
-          py: 1,
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          flexWrap: 'wrap',
-          gap: 2,
+        sx={{ mt: 1, py: 1, display: 'flex', justifyContent: 'space-evenly',
+          flexWrap: 'wrap', gap: 2,
         }}
       >              
         {booksVolumes &&

@@ -21,19 +21,15 @@ export function AppBarBlock() {
             BOOKS
           </Typography>
           <Box sx={{display: { xs: 'none', sm: 'block'}}}>
-
             <Link to={`/`}>
               <Button sx={{ color: '#fff' }}>Search</Button>
             </Link>
-
             <Link to={`/localbookshelf`}>
               <Button sx={{ color: '#fff', ml: 2 }}>Local bookshelf</Button>
             </Link>
-
             <Link to={`/publicbookshelf`}>
               <Button sx={{ color: '#fff', ml: 2 }}>Public bookshelf</Button>
-            </Link>
-            
+            </Link>            
           </Box>
         </Toolbar>
       </AppBar>

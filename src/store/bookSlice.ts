@@ -1,5 +1,5 @@
 import { AnyAction, createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios, { Axios, AxiosError } from 'axios';
+import axios, {  AxiosError } from 'axios';
 import { IBook } from "../models";
 
 interface BooksState {
@@ -7,7 +7,6 @@ interface BooksState {
   loading: boolean;
   error: null | string; 
 }
-
 const initialState: BooksState = {
   book: null,
   loading: false,
@@ -22,7 +21,6 @@ export const fetchBook = createAsyncThunk<
     try {      
       const response = await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`)
       const res: IBook = response.data  
-      // console.log(res)  
       return res
     } catch (e: unknown) {      
       const error = e as AxiosError

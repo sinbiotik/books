@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Button, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { Box } from "@mui/system";
 import { IBook } from "../models"
@@ -6,40 +5,29 @@ import { IBook } from "../models"
 interface BookInfoProps {
   book: IBook;
   booksVolumesId: string [];
-  onAddBookVolumeId: (id: string) => void
-  onRemoveBookVolumeId: (id: string) => void
-  onRemovePublicVolumeId: (id: string) => void
+  booksVolumes: IBook[]
+  onAddBookId: (id: string) => void
+  onRemoveBookId: (id: string) => void
+  onAddPublicVolume: (book: IBook) => void
+  onRemovePublicId: (id: string) => void
 }
 
 export function BookInfo({
-  book, booksVolumesId, onAddBookVolumeId, onRemoveBookVolumeId, onRemovePublicVolumeId
+  book, booksVolumesId, booksVolumes, onAddBookId, onRemoveBookId,
+  onAddPublicVolume, onRemovePublicId
 }: BookInfoProps){
-  const isAdded = booksVolumesId.some(id => id === book.id)  
-  function handleAddVolumeId() {
-    if(!isAdded) {
-      onAddBookVolumeId(book.id)
-      console.log(book.id)
-    }
-  }
 
-  function handleRemoveVolumeId() {
-    if(isAdded) {
-      onRemoveBookVolumeId(book.id)
-      console.log(book.id)
-    }
-  }
+  const isAdded = booksVolumesId.some(volumeId => volumeId === book.id)
+  const isPublicAdd = booksVolumes.some(volume => volume.id === book.id)
+  
+  function handleAddId() { if(!isAdded) onAddBookId(book.id)}
+  function handleRemoveId() {if(isAdded)  onRemoveBookId(book.id)}
 
-  function onRemovePublicVolumeIdHandler() {
-    onRemovePublicVolumeId(book.id)
-    console.log(book.id)
-  }
+  function onAddPublicIdHandler() {if(!isPublicAdd) onAddPublicVolume(book)}
+  function onRemovePublicIdHandler() {if(isPublicAdd) onRemovePublicId(book.id)}
 
-  const imageBookList = book.volumeInfo.imageLinks
-  const imageBook =   
-    imageBookList?.medium
-    || imageBookList?.small
-    || imageBookList?.thumbnail
-    || imageBookList?.smallThumbnail 
+  const imgL = book.volumeInfo.imageLinks
+  const imgBook = imgL?.medium || imgL?.small || imgL?.thumbnail || imgL?.smallThumbnail 
 
   return(
     <Card
@@ -57,7 +45,7 @@ export function BookInfo({
           sx={{ height: 480, width: 320, mx: 'auto', my: 2,
             boxShadow: '7px 7px 10px 5px rgba(0, 0, 0, .5)', 
           }}          
-          image={imageBook}
+          image={imgBook}
           alt={book.volumeInfo.title}
         />
         <Typography variant="body2">
@@ -82,7 +70,7 @@ export function BookInfo({
             <Button
               variant="contained"
               sx={{m: 1}}
-              onClick={handleAddVolumeId}
+              onClick={handleAddId}
             >
               Add to local bookshelf
             </Button>
@@ -93,25 +81,35 @@ export function BookInfo({
               variant="outlined"
               color="error"
               sx={{m: 1}}
-              onClick={handleRemoveVolumeId}
+              onClick={handleRemoveId}
             >
               Remove to local bookshelf
             </Button>
           }
 
-          {/* <Button
-            variant="outlined"
-            color="error"
-            sx={{m: 1}}
-            onClick={onRemovePublicVolumeIdHandler}
-          >
-            Remove to public bookshelf
-          </Button> */}
-        </Box>
+          {!isPublicAdd &&
+            <Button
+              variant="contained"
+              sx={{m: 1}}
+              onClick={onAddPublicIdHandler}
+            >
+              Add to public bookshelf
+            </Button>
+          }
 
+          {isPublicAdd &&
+            <Button
+              variant="outlined"
+              color="error"
+              sx={{m: 1}}
+              onClick={onRemovePublicIdHandler}
+            >
+              Remove to public bookshelf
+            </Button>
+          }
+        </Box>
       </CardContent>
-    </Card>
-    
+    </Card>   
   )
 }
 

@@ -6,8 +6,7 @@ import { QueryField } from '../components/QueryField';
 import { Loader } from "../components/Loader";
 import { FiltersBlock } from "../components/FiltersBlock";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import {
-  fetchBooksVolumes, inputQuery, selectCategory, selectOrderBy, setPage
+import { fetchBooksVolumes, inputQuery, selectCategory, selectOrderBy, setPage
 } from "../store/booksVolumesSlice";
 import { PaginationBlock } from "../components/PaginationBlock";
 
@@ -18,7 +17,6 @@ export function HomePage() {
   const dispatch = useAppDispatch()
   
   const addSearch = () => {
-    //       ?????
     if(query.trim().length) {
       dispatch(fetchBooksVolumes())
     }    
@@ -50,8 +48,7 @@ export function HomePage() {
       </Box> 
       <Box 
         sx={{ mt: 1, py: 1, display: 'flex', justifyContent: 'space-evenly',
-          flexWrap: 'wrap',
-          gap: 2,
+          flexWrap: 'wrap', gap: 2,
         }}
       >              
         {booksVolumes && booksVolumes.map(

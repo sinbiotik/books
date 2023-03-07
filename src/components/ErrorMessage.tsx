@@ -9,6 +9,5 @@ export function ErrorMessage({ error }: ErrorMessageProps) {
     <Typography color="red">
       ERROR MESSAGE: <strong>'{ error }'</strong> 
     </Typography>
-  )
-  
+  )  
 }

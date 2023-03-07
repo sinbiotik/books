@@ -19,13 +19,7 @@ export function PaginationBlock({page, count, onChangePage}: PaginationBlockProp
 
   return(
     <Box
-      sx={{
-        mx: 'auto',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        alignItems: 'center'
-      }}
+      sx={{mx: 'auto', display:'flex', flexDirection:'column', gap: 2, alignItems: 'center'}}
     >
       <div>
         <Button

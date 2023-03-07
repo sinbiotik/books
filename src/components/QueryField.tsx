@@ -22,16 +22,10 @@ export function QueryField({query, onInput, onSubmit}: InputFieldProps) {
     <Box
       component="form"
       onSubmit={(e) => {e.preventDefault()}}
-      sx={{        
-        py: 2,
-        display: 'flex',
-        gap: 2,
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-        '& > :not(style)': { m: 1 },
+      sx={{py: 2, display: 'flex', gap: 2, justifyContent: 'center',
+        flexWrap: 'wrap', '& > :not(style)': { m: 1 },
       }}
       noValidate
-      // autoComplete="off"
     >
       <TextField
         variant="standard"

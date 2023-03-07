@@ -22,14 +22,7 @@ export function FiltersBlock({
 
   return(
     <Box
-      sx={{
-        mt: 1,
-        py: 1,
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-        gap: 2,
-      }}
+      sx={{mt: 1, py: 1, display:'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 2,}}
     >
       <FormControl sx={{ m: 1, minWidth: 130 }}>
         <InputLabel id="category__label">category:</InputLabel>
