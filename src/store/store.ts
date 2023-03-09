@@ -14,13 +14,16 @@ import booksVolumesReducer from './booksVolumesSlice'
 import bookReducer from './bookSlice'
 import localBookshelfReducer from './localBookshelfSlice'
 import publicBookshelfReduceer from './publicBookshelfSlice'
+import userReducer from './userSlice'
+
 
 
 const rootReducer = combineReducers({
   booksVolumes: booksVolumesReducer,
   book: bookReducer,
   localBookshelf: localBookshelfReducer,
-  publicBookshelf: publicBookshelfReduceer
+  publicBookshelf: publicBookshelfReduceer,
+  user: userReducer,
 })
 
 const persistConfig = {

@@ -92,10 +92,17 @@ export interface SearchInfo {
 }
 
 
+export interface IErrorLogin {
+  code: number;
+  message: string;
+  errors: Error2[];
+}
 
-// export interface RootObject {
-//   kind: string;
-//   totalItems: number;
-//   items: Item[];
-// }
+export interface Error2 {
+  message: string;
+  domain: string;
+  reason: string;
+}
+
+
 

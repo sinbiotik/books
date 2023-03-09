@@ -4,7 +4,7 @@ import { AppBarBlock } from "../components/AppBarBlock";
 import { BookVolumeCard } from "../components/BookVolumeCard";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { Loader } from "../components/Loader";
-import { useAppDispatch, useAppSelector } from "../hooks";
+import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
 import { fetchLocalBookshelf } from "../store/localBookshelfSlice";
 
 export function LocalBookshelf() {

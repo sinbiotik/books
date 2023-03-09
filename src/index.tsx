@@ -6,12 +6,13 @@ import App from './App';
 import './index.css';
 import { HashRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import './firebase';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <HashRouter>
@@ -19,6 +20,6 @@ root.render(
         </HashRouter>
       </PersistGate>
     </Provider>
-  // </React.StrictMode>
+  </React.StrictMode>
 );
 

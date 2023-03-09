@@ -33,8 +33,8 @@ export function BookInfo({
     <Card
       variant="outlined"
       sx={{ width: 'auto', minHeight: 1080, my: 2, 
-          boxShadow: '0 0 10px 5px rgba(221, 221, 221, 1)',
-        }}
+        boxShadow: '0 0 10px 5px rgba(221, 221, 221, 1)',
+      }}
     >
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, px: 5,}}>
         <Typography sx={{my: 1, mx: 'auto' }} variant="h4">

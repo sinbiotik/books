@@ -5,7 +5,7 @@ import { AppBarBlock } from '../components/AppBarBlock';
 import { BookInfo } from '../components/BookInfo';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { Loader } from '../components/Loader';
-import { useAppDispatch, useAppSelector } from '../hooks';
+import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { fetchBook } from '../store/bookSlice';
 import { addLocalBooksId, removeLocalBooksId } from '../store/localBookshelfSlice';
 import { addPublicBook, removePublicBook } from '../store/publicBookshelfSlice';
