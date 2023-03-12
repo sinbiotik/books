@@ -2,14 +2,12 @@ import { useAppDispatch } from "../hooks/redux-hooks"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Form } from "./Form";
 import { setUser } from "../store/userSlice";
-import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { ErrorMessage } from "./ErrorMessage";
 import { IErrorLogin } from "../models";
 
 export function SignUp() {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
   const [error, setError] = useState<IErrorLogin | null>(null)
 
   const handleRegister = (email: string, password: string) => {
@@ -21,8 +19,7 @@ export function SignUp() {
           email: user.email,
           id: user.uid,
           token: user.refreshToken
-        }))
-        navigate('/')
+        }))        
       })
       .catch((error) => setError(error))
   }

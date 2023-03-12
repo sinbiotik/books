@@ -14,7 +14,7 @@ const initialState: BooksState = {
 }
 
 export const fetchBook = createAsyncThunk<
-  IBook, string | undefined, {rejectValue: string}
+  IBook, string, {rejectValue: string}
 >(
   'book/bookSlice',
   async function (id, {rejectWithValue}) {

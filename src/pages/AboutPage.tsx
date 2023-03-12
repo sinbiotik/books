@@ -8,17 +8,21 @@ import { Loader } from '../components/Loader';
 import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { fetchBook } from '../store/bookSlice';
 import { addLocalBooksId, removeLocalBooksId } from '../store/localBookshelfSlice';
-import { addPublicBook, removePublicBook } from '../store/publicBookshelfSlice';
+import { addPublicBook, fetchPublicBook, removePublicBook } from '../store/publicBookshelfSlice';
 
 export function AboutPage() {
   const {id} = useParams()
   const dispatch = useAppDispatch()
   const {book, error, loading } = useAppSelector(state => state.book)
   const {booksVolumesId}   = useAppSelector(state => state.localBookshelf)
-  const {booksVolumes} = useAppSelector(state => state.publicBookshelf)
+  const {publicBook} = useAppSelector(state => state.publicBookshelf)
+  const isAdded = booksVolumesId.some(volumeId => volumeId === id)
+  const isPublicAdded = !!publicBook
 
   useEffect(() => {
+    if (!id) return
     dispatch(fetchBook(id))
+    dispatch(fetchPublicBook(id))
   }, [dispatch])
   
   return(
@@ -32,8 +36,8 @@ export function AboutPage() {
         {book && 
           <BookInfo            
             book={book}
-            booksVolumesId={booksVolumesId}
-            booksVolumes={booksVolumes}
+            isAdded={isAdded}
+            isPublicAdded={isPublicAdded}
             onAddBookId={(id)=>dispatch(addLocalBooksId(id))}
             onRemoveBookId={(id)=>dispatch(removeLocalBooksId(id))}
             onAddPublicVolume={(book)=>dispatch(addPublicBook(book))}

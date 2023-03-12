@@ -1,7 +1,6 @@
 import { useAppDispatch } from "../hooks/redux-hooks"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Form } from "./Form";
-import { useNavigate } from 'react-router-dom'
 import { setUser } from "../store/userSlice";
 import { useState } from "react";
 
@@ -11,10 +10,7 @@ import { IErrorLogin } from "../models";
 
 export function Login() {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
   const [error, setError] = useState<IErrorLogin | null>(null)
-
-
   const handleLogin = (email: string, password: string) => {
     const auth = getAuth()
     signInWithEmailAndPassword(auth, email, password)
@@ -23,12 +19,10 @@ export function Login() {
           email: user.email,
           id: user.uid,
           token: user.refreshToken
-        }))
-        navigate('/')
+        }))        
       })
       .catch((error) => setError(error))
-  }
-  
+  }  
 
   return (
     <>

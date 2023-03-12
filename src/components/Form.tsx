@@ -9,7 +9,7 @@ interface FormProps {
 export function Form({title, handleClick}: FormProps) {
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
-  const isContent = email.length > 0 && pass.length> 5 && email.includes('@' && '.')
+  const isContent = pass.length> 5 && email.includes('@')
   
   function inputHandler() {
     handleClick(email.trim(), pass.trim())

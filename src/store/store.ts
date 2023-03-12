@@ -16,26 +16,22 @@ import localBookshelfReducer from './localBookshelfSlice'
 import publicBookshelfReduceer from './publicBookshelfSlice'
 import userReducer from './userSlice'
 
-
+const persistConfig = {
+  key: 'localBookshelf',
+  storage: storage,
+}
+const persistedReducer = persistReducer(persistConfig, localBookshelfReducer)
 
 const rootReducer = combineReducers({
   booksVolumes: booksVolumesReducer,
   book: bookReducer,
-  localBookshelf: localBookshelfReducer,
+  localBookshelf: persistedReducer,
   publicBookshelf: publicBookshelfReduceer,
   user: userReducer,
 })
 
-const persistConfig = {
-  key: 'root',
-  storage: storage,
-  whitelist: ['localBookshelf', 'publicBookshelf']
-}
-
-const persistedReducer = persistReducer(persistConfig, rootReducer)
-
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

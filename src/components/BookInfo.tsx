@@ -3,9 +3,9 @@ import { Box } from "@mui/system";
 import { IBook } from "../models"
 
 interface BookInfoProps {
-  book: IBook;
-  booksVolumesId: string [];
-  booksVolumes: IBook[]
+  book: IBook
+  isAdded: boolean
+  isPublicAdded: boolean
   onAddBookId: (id: string) => void
   onRemoveBookId: (id: string) => void
   onAddPublicVolume: (book: IBook) => void
@@ -13,18 +13,15 @@ interface BookInfoProps {
 }
 
 export function BookInfo({
-  book, booksVolumesId, booksVolumes, onAddBookId, onRemoveBookId,
+  book, isAdded, isPublicAdded, onAddBookId, onRemoveBookId,
   onAddPublicVolume, onRemovePublicId
 }: BookInfoProps){
 
-  const isAdded = booksVolumesId.some(volumeId => volumeId === book.id)
-  const isPublicAdd = booksVolumes.some(volume => volume.id === book.id)
-  
   function handleAddId() { if(!isAdded) onAddBookId(book.id)}
   function handleRemoveId() {if(isAdded)  onRemoveBookId(book.id)}
 
-  function onAddPublicIdHandler() {if(!isPublicAdd) onAddPublicVolume(book)}
-  function onRemovePublicIdHandler() {if(isPublicAdd) onRemovePublicId(book.id)}
+  function onAddPublicIdHandler() {if(!isPublicAdded) onAddPublicVolume(book)}
+  function onRemovePublicIdHandler() {if(isPublicAdded) onRemovePublicId(book.id)}
 
   const imgL = book.volumeInfo.imageLinks
   const imgBook = imgL?.medium || imgL?.small || imgL?.thumbnail || imgL?.smallThumbnail 
@@ -87,7 +84,7 @@ export function BookInfo({
             </Button>
           }
 
-          {!isPublicAdd &&
+          {!isPublicAdded &&
             <Button
               variant="contained"
               sx={{m: 1}}
@@ -97,7 +94,7 @@ export function BookInfo({
             </Button>
           }
 
-          {isPublicAdd &&
+          {isPublicAdded &&
             <Button
               variant="outlined"
               color="error"
