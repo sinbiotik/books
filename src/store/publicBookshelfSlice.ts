@@ -2,37 +2,27 @@ import { IBook } from './../models';
 import { AnyAction, createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios, { AxiosError } from 'axios';
 
-
 interface PublicBookshelfState {
-  booksVolumes: IBook[] | null;
+  booksVolumes: IBook[];
+  publicBook: IBook | null;
   loading: boolean;
   error: null | string; 
 }
-
 const initialState: PublicBookshelfState = {
-  booksVolumes:  null,
+  booksVolumes: [],
+  publicBook: null,
   loading: false,
   error: null,
 }
 
-const BOOKSHELF_FAVORITE = 0
 export const fetchPublicBookshelf = createAsyncThunk<
-  IBook[],
-  undefined,
-  {rejectValue: string}
+  IBook[], undefined, {rejectValue: string}
 >(
   'publicBookshelf/fetchPublicBookshelf',
   async function(_, {rejectWithValue}) {
     try {
-      const userId = `109777769115173013396`
-      const bookshelfId = BOOKSHELF_FAVORITE
-      const APIKey = `AIzaSyCsJ17xcbR7PRSvKKXlMdpWTeRl_bU4JsU`
-
-      const responses = await axios.get(
-        `https://www.googleapis.com/books/v1/users/${userId}/bookshelves`+
-        `/${bookshelfId}/volumes?${APIKey}`
-      )
-      const response = responses.data.items
+      const responses = await axios.get(`http://localhost:3001/booksVolumes`)
+      const response = responses.data
       return response
     } catch (e: unknown) {
       const error = e as AxiosError
@@ -41,27 +31,45 @@ export const fetchPublicBookshelf = createAsyncThunk<
   }
 )
 
-
-export const deletePublicBook = createAsyncThunk<
-  string,
-  string,
-  {rejectValue: string}
+export const fetchPublicBook = createAsyncThunk<
+  IBook, string, {rejectValue: string}
 >(
+  'publicBookshelf/fetchPublicBook',
+  async function(id, {rejectWithValue}) {
+    try {
+      const responses = await axios.get(`http://localhost:3001/booksVolumes/?id=${id}`)
+      const response = responses.data[0]
+      return response
+    } catch (e: unknown) {      
+      const error = e as AxiosError
+      return rejectWithValue(error.message)
+    }
+  }
+)
+
+export const addPublicBook = createAsyncThunk<IBook, IBook,{rejectValue: string}>(
+  'publicBookshelf/addPublicBook',
+  async function(book, {rejectWithValue}) {
+    try {
+      const response = await axios({
+        method: 'post',
+        url: `http://localhost:3001/booksVolumes`,
+        data: book,
+      })
+      const res: IBook = response.data
+      return res 
+    } catch (e: unknown) {
+      const error = e as AxiosError
+      return rejectWithValue(error.message)
+    }
+  }
+)
+
+export const removePublicBook = createAsyncThunk< string, string, {rejectValue: string}>(
   'publicBookshelf/deletePublicBook',
   async function(id, {rejectWithValue}) {
     try {
-      const userId = `109777769115173013396`
-      const bookshelfId = `0`
-      const APIKey = `AIzaSyCsJ17xcbR7PRSvKKXlMdpWTeRl_bU4JsU`
-
-      await axios.post(
-        `https://www.googleapis.com/books/v1/users/${userId}/bookshelves`+
-        `/${bookshelfId}/removeVolume?volumeId=${id}&${APIKey}`,
-        {'Content-Type': 'application/json',
-        'Content-Length': 'CONTENT_LENGTH'}
-      )
-      // console.log(id)
-      
+      await axios.delete(`http://localhost:3001/booksVolumes/${id}`)      
       return id
     } catch (e: unknown) {
       const error = e as AxiosError
@@ -76,30 +84,37 @@ const publicBookshelfSlice = createSlice({
   reducers: {},
   extraReducers(builder){
     builder
-      .addCase(fetchPublicBookshelf.pending, (state) => {
+      .addCase(fetchPublicBookshelf.pending, (state) => {        
+        state.booksVolumes = []        
         state.loading = true
         state.error = null
       })
-
+      .addCase(fetchPublicBook.fulfilled, (state, action) => {        
+        state.loading = false
+        state.publicBook = action.payload
+      })
+      .addCase(fetchPublicBook.pending, (state) => {        
+        state.publicBook = null
+      })
       .addCase(fetchPublicBookshelf.fulfilled, (state, action) => {
         state.loading = false
         state.booksVolumes = action.payload
       })
-
-      .addCase(deletePublicBook.fulfilled, (state, action) => {
-        console.log(state.booksVolumes)
-        console.log(action.payload)
+      .addCase(addPublicBook.fulfilled, (state, action) => {        
+        state.booksVolumes.push(action.payload)
+        state.publicBook = action.payload
       })
-
+      .addCase(removePublicBook.fulfilled, (state, action) => {        
+        state.booksVolumes = state.booksVolumes.filter(book => book.id !== action.payload)
+        state.publicBook = null
+      })
       .addMatcher(isError, (state, action: PayloadAction<string>) => {
         state.error = action.payload
         state.loading = false
       })
   } 
 })
-
 export default publicBookshelfSlice.reducer
-
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected')
 }

@@ -30,7 +30,6 @@ export const fetchLocalBookshelf = createAsyncThunk<
           ))
         )
         const res = responses.map(response => response.data)
-        // console.log(initialState)
         return res
       } 
       return [] 
@@ -45,14 +44,14 @@ const localBookshelfSlice = createSlice({
   name: 'localBookshelf',
   initialState: initialState,
   reducers: {
-    addLocalBooksVolumesId(state, action: PayloadAction<string>) {
+    addLocalBooksId(state, action: PayloadAction<string>) {
       if (state.booksVolumesId?.find(id => id === action.payload)){
         return
       }
       state.booksVolumesId?.push(action.payload)
     },
 
-    removeLocalBooksVolumesId(state, action: PayloadAction<string>) {
+    removeLocalBooksId(state, action: PayloadAction<string>) {
       if (state.booksVolumesId){
         state.booksVolumesId = state.booksVolumesId.filter(
           id => id !== action.payload
@@ -65,9 +64,8 @@ const localBookshelfSlice = createSlice({
       .addCase(fetchLocalBookshelf.pending, (state) => {
         state.loading = true
         state.error = null
-      })
-      //                                                               
-      .addCase(fetchLocalBookshelf.fulfilled, (state, action: PayloadAction<IBook[]> ) => {        
+      })                                                            
+      .addCase(fetchLocalBookshelf.fulfilled, (state, action: PayloadAction<IBook[]>) => {        
         state.loading = false
         state.booksVolumes = action.payload
       })
@@ -77,11 +75,7 @@ const localBookshelfSlice = createSlice({
       })
   },
 })
-export const {
-  addLocalBooksVolumesId,
-  removeLocalBooksVolumesId
-} = localBookshelfSlice.actions
-
+export const {addLocalBooksId,  removeLocalBooksId} = localBookshelfSlice.actions
 export default localBookshelfSlice.reducer
 
 function isError(action: AnyAction) {

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Paper, Typography } from "@mui/material"
+import { Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 import { IBook } from "../models"
 
@@ -7,13 +7,9 @@ interface BookCardProps {
 }
 
 export function BookVolumeCard({book}: BookCardProps) {
-  const imageBookList = book.volumeInfo.imageLinks
+  const imgL = book.volumeInfo.imageLinks
   
-  const imageBook =  
-    imageBookList?.medium
-    || imageBookList?.small
-    || imageBookList?.thumbnail
-    || imageBookList?.smallThumbnail
+  const imgBook = imgL?.medium || imgL?.small || imgL?.thumbnail || imgL?.smallThumbnail
 
   return(
     <Link to={`/about/${book.id}`}>
@@ -30,7 +26,7 @@ export function BookVolumeCard({book}: BookCardProps) {
             sx={{ height: 320, width: 240, mx: 'auto', my: 1,
               boxShadow: '7px 7px 10px 5px rgba(0, 0, 0, .5)',
             }}
-            image={imageBook}
+            image={imgBook}
             alt={book.volumeInfo.title}
           />                
 

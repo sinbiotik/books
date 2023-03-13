@@ -5,29 +5,25 @@ import { ErrorMessage } from "../components/ErrorMessage";
 import { QueryField } from '../components/QueryField';
 import { Loader } from "../components/Loader";
 import { FiltersBlock } from "../components/FiltersBlock";
-import { useAppDispatch, useAppSelector } from "../hooks";
-import {
-  fetchBooksVolumes, inputQuery, selectCategory, selectOrderBy, setPage
+import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
+import { fetchBooksVolumes, inputQuery, selectCategory, selectOrderBy, setPage
 } from "../store/booksVolumesSlice";
 import { PaginationBlock } from "../components/PaginationBlock";
 
 export function HomePage() {
   const {
     booksVolumes, totalItems, loading, error, category, orderBy, query, page
-  } = useAppSelector( state => state.booksVolumes )  
-  const dispatch = useAppDispatch()
-  
+  } = useAppSelector( state => state.booksVolumes)  
+  const dispatch = useAppDispatch()  
   const addSearch = () => {
-    //       ?????
     if(query.trim().length) {
       dispatch(fetchBooksVolumes())
     }    
   }
 
-  return(
+  return (
     <Container maxWidth='xl'>
       <AppBarBlock />
-
       <QueryField
         query={query}
         onInput={(value) => {dispatch(inputQuery(value))}}
@@ -50,15 +46,13 @@ export function HomePage() {
       </Box> 
       <Box 
         sx={{ mt: 1, py: 1, display: 'flex', justifyContent: 'space-evenly',
-          flexWrap: 'wrap',
-          gap: 2,
+          flexWrap: 'wrap', gap: 2,
         }}
       >              
         {booksVolumes && booksVolumes.map(
           book => <BookVolumeCard key={book.id+book.etag} book={book}/>
         )}                
       </Box>
-
       {booksVolumes &&
         <PaginationBlock
           page={page}
@@ -71,6 +65,6 @@ export function HomePage() {
           }}
         />
       }           
-    </Container>
+    </Container>    
   )
 }

@@ -5,7 +5,7 @@ import { AnyAction, createAsyncThunk, createSlice, PayloadAction } from '@reduxj
 
 interface BooksVolumesState {
   query: string;
-  booksVolumes: IBook[] | null;
+  booksVolumes: IBook[];
   category: string;
   orderBy: string;
   page: number;
@@ -16,7 +16,7 @@ interface BooksVolumesState {
 
 const initialState: BooksVolumesState = {
   query: '',
-  booksVolumes: null,
+  booksVolumes: [],
   category: 'all',
   orderBy: 'relevance',
   page: 1,
@@ -34,7 +34,6 @@ export const fetchBooksVolumes = createAsyncThunk<
   async function(_, {rejectWithValue, getState}) {
     try {
       const {query, category, orderBy, page} = getState().booksVolumes
-      console.log(query)
       let subject: string
       if(category === 'all') {
         subject = ''
@@ -48,10 +47,8 @@ export const fetchBooksVolumes = createAsyncThunk<
         `q=${encodeURIComponent(query)}${subject}${order}`,
         {params: {startIndex, maxResults: 30}}
       )
-      const response: IBook[] = responses.data.items
-      
+      const response: IBook[] = responses.data.items      
       const totalItems: number = responses.data.totalItems
-      console.log(responses)  
       return ({response, totalItems})
     } catch (e: unknown) {      
       const error = e as AxiosError
@@ -65,7 +62,6 @@ const booksVolumesSlice = createSlice({
   initialState: initialState,
   reducers: {
     inputQuery(state, action: PayloadAction<string>){
-      console.log(encodeURIComponent(action.payload))
       state.query = action.payload
       state.page = 1
     },
@@ -79,14 +75,14 @@ const booksVolumesSlice = createSlice({
     },
     setPage(state, action: PayloadAction<number>) {
       state.page = action.payload
-    }
-    
+    }    
   },
+  
   extraReducers(builder) {
     builder
       .addCase(fetchBooksVolumes.pending, (state) => {
         state.totalItems = 0
-        state.booksVolumes = null
+        state.booksVolumes = []
         state.loading = true
         state.error = null
       })

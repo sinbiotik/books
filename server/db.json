@@ -1,0 +1,695 @@
+{
+  "booksVolumes": [
+    {
+      "kind": "books#volume",
+      "id": "jTZbAAAAQAAJ",
+      "etag": "PIAm5daNDQU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/jTZbAAAAQAAJ",
+      "volumeInfo": {
+        "title": "On the Origin of Species by Means of Natural Selection, Or, The Preservation of Favoured Races in the Struggle for Life",
+        "authors": [
+          "Charles Darwin"
+        ],
+        "publishedDate": "1859",
+        "description": "It took Charles Darwin more than twenty years to publish this book, in part because he realized that it would ignite a firestorm of controversy. The Origin of Species first appeared in 1859, and it remains a continuing source of conflict to this ...",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OXFORD:301043408"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 546,
+        "printType": "BOOK",
+        "categories": [
+          "Electronic books"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 6,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "6.5.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=jTZbAAAAQAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=jTZbAAAAQAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "previewLink": "http://books.google.ru/books?id=jTZbAAAAQAAJ&printsec=frontcover&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=jTZbAAAAQAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=jTZbAAAAQAAJ"
+      },
+      "saleInfo": {
+        "country": "RU",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=jTZbAAAAQAAJ&rdid=book-jTZbAAAAQAAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "RU",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.ru/books/download/On_the_Origin_of_Species_by_Means_of_Nat.epub?id=jTZbAAAAQAAJ&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "downloadLink": "http://books.google.ru/books/download/On_the_Origin_of_Species_by_Means_of_Nat.pdf?id=jTZbAAAAQAAJ&hl=&output=pdf&sig=ACfU3U0wU6XyPWjUxLeiUTxrXkO5rx_ysQ&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=jTZbAAAAQAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "GOfqDwAAQBAJ",
+      "etag": "rUQGULMdMFw",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/GOfqDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Node JS - Vol. 1",
+        "subtitle": "Instalación - Arquitectura - node y npm",
+        "authors": [
+          "Luciano Puciarelli"
+        ],
+        "publisher": "RedUsers",
+        "publishedDate": "2020-06-12",
+        "description": "<p>En la actualidad, las tecnologías de tipo JavaScript están presentes en la mayoría de los dispositivos y sistemas informáticos. Node.js es un entorno de ejecución que permite ejecutar código JavaScript del lado del servidor y, además, incluye un gran número de librerías adicionales destinadas a crear todo tipo de aplicaciones.</p><p>Está mayormente orientado a aplicaciones que brindan servicios sobre Internet, ya que cuenta con un gran número de módulos y librerías de terceros que permiten administrar y soportar todos los requisitos impuestos por las tecnologías actuales. Su arquitectura modular, orientada a eventos, y el estilo de programación asíncrona hacen que Node.js se desempeñe de manera estable y eficiente bajo intensas cargas de trabajo.</p><p>Desde la fecha de su creación (2009) ha evolucionado de tal manera, que hoy en día es utilizado por empresas como Netflix, LinkedIn, Paypal y Uber para brindar sus servicios.</p>",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "9874757922"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9789874757920"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 105,
+        "printedPageCount": 106,
+        "printType": "BOOK",
+        "categories": [
+          "Computers / Software Development & Engineering / General",
+          "Computers / Programming / General"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.0.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/publisher/content?id=GOfqDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71dcszDBpcQLPWLy0Gq7uTFU--hpa04E8tLwoWuFc5UEKBwKHJ2O3TA6eytoeundS1WBJnfMTbJrqdcNKFlg8LVObfOjkB6GTWCu7O_7uOiidD62-ANADC3AYOmC6TpszVxYCxU&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/publisher/content?id=GOfqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE722xn0SKBH2MJhHqzPrcyQfQHVTP3rsNpfBf8_wTQ-8LJg7vUn1dAmfdxlVsdPGj-68p2OZ-wBE-q1wUhemEqdfKPC09an8QOhTciU23MDXkO1yLAK0EYaoCFNcbGAZyOtmKrJI&source=gbs_api",
+          "small": "http://books.google.com/books/publisher/content?id=GOfqDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71t-vY3YSMVHxfWyI1Av96yPmPselIV-nnFV3cZs1LRc4TbObHlpyUONoUNmyK0CNC5mulpi383gKLgn7YxtZ9QVouEen53L7txNYhiBokPFqxWT7mBhRT8wvZOwzgFKhkShAzx&source=gbs_api",
+          "medium": "http://books.google.com/books/publisher/content?id=GOfqDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70rMV49ZBRO3WsqR9usVSp1GmU7yfhWLiw16MNEFUTeFy5j85tro5bm9pdptdXKO0RkXOoa2WxaHNaLJ8vImGbicFWO2sOo8qOTnIkt5bywEqPSAfdKbyhY7LmNWGg380sQ2vsh&source=gbs_api",
+          "large": "http://books.google.com/books/publisher/content?id=GOfqDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70pTv_sxOZJMolwlbWhkRIG5Y03CEI9KQ8bwOCFrq4RfwvKfChvgClzjZrlwif-2Jofx61nYjNm_O7JW2UB1gBw_LeB9_U2OKNsQ1kTj8XjUohYPUdvmIvMwZNRdjhb_XSf7ejY&source=gbs_api",
+          "extraLarge": "http://books.google.com/books/publisher/content?id=GOfqDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE71SnsK1_wTTyjyGSdyxrpkoBupG1-tIYiHMgfB-r1e62cj51iOcmbsEM-VBvW0oe8Snq_IjxJjgw-DDqz6HDnRbVTZUQ-4rgL19YyEIZ5mEnokMDX_x8pEbRsKEOvQlbOUDbi7a&source=gbs_api"
+        },
+        "language": "es",
+        "previewLink": "http://books.google.ru/books?id=GOfqDwAAQBAJ&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=GOfqDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=GOfqDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "RU",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 363.66,
+          "currencyCode": "RUB"
+        },
+        "retailPrice": {
+          "amount": 363.66,
+          "currencyCode": "RUB"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=GOfqDwAAQBAJ&rdid=book-GOfqDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 363660000,
+              "currencyCode": "RUB"
+            },
+            "retailPrice": {
+              "amountInMicros": 363660000,
+              "currencyCode": "RUB"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "RU",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/Node_JS_Vol_1-sample-pdf.acsm?id=GOfqDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=GOfqDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "FrtLEAAAQBAJ",
+      "etag": "86kbS4msGNM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/FrtLEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Эффективный C. Профессиональное программирование",
+        "authors": [
+          "Сикорд Роберт С."
+        ],
+        "publisher": "\"Издательский дом \"\"Питер\"\"\"",
+        "publishedDate": "2021-08-11",
+        "description": "Мир работает на коде, написанном на C, но в большинстве учебных заведений программированию учат на Python или Java. Книга «Эффективный С для профессионалов» восполняет этот пробел и предлагает современный взгляд на C. Здесь рассмотрен C17, а также потенциальные возможности C2x. Издание неизбежно станет классикой, с его помощью вы научитесь писать профессиональные и надежные программы на C, которые лягут в основу устойчивых систем и решат реальные задачи.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "5446118510"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9785446118519"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 304,
+        "printedPageCount": 304,
+        "printType": "BOOK",
+        "categories": [
+          "Computers / Programming / General"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.3.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73mhrYs88rAU_gTIa9tx-8mdK0fKiuj38aMXn0-TD7F9FlbYnKXs4YSYeK3dNbSAjJ6VYHou7obp5FRseweWH1NgdPAJdGJaoq3QaWKnwnCRzzlQ0Kt2gAVdlJ5Gf0JqhBTzoAc&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73ic4lkC72fTUL5v-aQn0hH26rlc2Xfc-iXbfrcFKGD6Mp72lXUUiS-Ioo7p9nl2ItBKMLrLvwM8sh4jxE1GkTKVbACGDPRNRcXFJRd3Nk03R-5uAEue_1E6_gFcxo5iroCRAq_&source=gbs_api",
+          "small": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE735RKGdGtqwQkl6QLhYLVkmw3LX7fHN9pzhjd2sOnzPtPk012S04GawZETfEOBTuTX5zeIcrKj7tB44JlPZVX5xEm_Co9sifsDe8UmmVjn2rTqZHZ-6GM6-uegitU9WIyuv8-iJ&source=gbs_api",
+          "medium": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70W_exqt8LVc9GgJkNYRGpSdPxd-2LbvqgdGPnBkB68c7DItsRAn2BQ04PkMXflGWUBq8Ai2trkQCZCVBGz372qK73UlY9cxVejEwLxQ2gPMOiLrfVmYj2UxFNc3djGD1NJtl1g&source=gbs_api",
+          "large": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE72SqeALwCMVEDYX1ESe5Rz_7TWOkqLNE0j-97XSi5E2Mvtiv1o-0_5SQknVPNFT5TPHPHYZEh069LaN5cbk9CfNNsA2RtS_C9LAN60_GliK_b-5KoHjSru9bkH5bVuqM9ADOu9N&source=gbs_api",
+          "extraLarge": "http://books.google.com/books/publisher/content?id=FrtLEAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE73SBa9gmW3vZ-1nlltWgm_DDc4j3QHfJu1ABKYvjUJQtdhPESB7940APmbTsBV2-7djt8GdpwSD8dHN9iaMpOrP4Fc-Ft-a4usv6s6z23oGzav5BEAVyKC3MT-kA_kZxPpl3Jnh&source=gbs_api"
+        },
+        "language": "ru",
+        "previewLink": "http://books.google.ru/books?id=FrtLEAAAQBAJ&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=FrtLEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=FrtLEAAAQBAJ"
+      },
+      "layerInfo": {
+        "layers": [
+          {
+            "layerId": "geo",
+            "volumeAnnotationsVersion": "5"
+          }
+        ]
+      },
+      "saleInfo": {
+        "country": "RU",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 599,
+          "currencyCode": "RUB"
+        },
+        "retailPrice": {
+          "amount": 599,
+          "currencyCode": "RUB"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=FrtLEAAAQBAJ&rdid=book-FrtLEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 599000000,
+              "currencyCode": "RUB"
+            },
+            "retailPrice": {
+              "amountInMicros": 599000000,
+              "currencyCode": "RUB"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "RU",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_C_%D0%9F%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81-sample-epub.acsm?id=FrtLEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_C_%D0%9F%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81-sample-pdf.acsm?id=FrtLEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=FrtLEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "NCAjEAAAQBAJ",
+      "etag": "liaUkX+Sso4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/NCAjEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Very Bad People",
+        "subtitle": "The Inside Story of the Fight Against the World’s Network of Corruption",
+        "authors": [
+          "Patrick Alley"
+        ],
+        "publisher": "Hachette UK",
+        "publishedDate": "2022-03-17",
+        "description": "<p><b>*****</b><br><br><b>'Reads like a John le Carré novel but is, in fact, very real.'</b> - <i>The Big Issue</i><br><br><b>'<i>Very Bad People </i>would be a hugely enjoyable thriller if it wasn't all true.'</b> - Isabella Tree, author of <i>Wilding</i><br><br><b>'Global Witness are fearless.'</b> - Gordon Roddick, Campaigner and Co-Founder of the Body Shop<br><br><b>'Part true crime tale, part investigative procedural, this is the account of the brilliant and necessary superheroes of Global Witness, whose superpower is the truth.'</b> - Edward Zwick, Director of <i>Blood Diamond </i><br><br><b>'<i>Very Bad People</i></b><b> reads like a non-stop high-speed chase as our fighters against corruption hunt down a litany of criminals and con-men, some on the fringes of our society, some embedded high up within it. It's a great story and an important one.'</b> - David Farr, Screenwriter, <i>The Night Manager</i><br><br><b>'The story told in this book of three youthful idealists who go from eating cold baked beans in a drafty London flat to the Thai-Cambodian border where they posed as traders in illegally felled timber is simply riveting. Don't miss it.'</b> - Misha Glenny, author of <i>McMafia</i><br><br><b>'Alley has produced a clear-eyed account of a world poisoned by dark money, and a welcome reminder that resistance is possible. As it turns out, his book is even more timely than he could have hoped.'</b> - <i>Irish Times</i><br><br><b>'This book is inspirational. It shows how young people with sufficient passion and intelligence have the capacity to go after some of the most powerful governments and corporations and shame, humiliate and just push governments to support important reforms that can make this a more decent world.'</b> - Frank Vogl, Co-Founder of Transparency International<br><br>Arms trafficking, offshore accounts and luxury property deals. Super-yachts, private jets and super-car collections. Blood diamonds, suspect oil deals, deforestation and murder. This is the world of Global Witness, the award-winning organisation dedicated to rooting out worldwide corruption. And this is co-founder Patrick Alley's revealing inside track on a breath-taking catalogue of modern super-crimes - and the 'shadow network' that enables them. <br><br>VERY BAD PEOPLE is about following the money, going undercover in the world's most dangerous places, and bringing down the people behind the crimes. Case by case we see maverick investigators pitched against warlords, grifters and super-villains who bear every resemblance to <i>The Night Manager</i>'s Richard Roper. One dictator's son spent $700 million in just four years on his luxury lifestyle.<br><br>As they unravel crooked deals of labyrinthine complexity, the team encounter well-known corporations whose operations are no less criminal than the Mafia. This network of lawyers, bankers and real estate agents help park dirty money in London, New York, or in offshore accounts, safe from prying eyes.<br><br>Patrick Alley's book is a brilliant, authoritative and fearless investigation into the darkest workings of our world - and an inspiration to all of us who want to fight back.</p>",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1913183513"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781913183516"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 336,
+        "printedPageCount": 394,
+        "printType": "BOOK",
+        "categories": [
+          "Biography & Autobiography / Personal Memoirs",
+          "Biography & Autobiography / Science & Technology",
+          "Political Science / Corruption & Misconduct",
+          "Computers / Internet / General",
+          "Political Science / Political Process / Political Advocacy",
+          "Social Science / General",
+          "Political Science / Political Process / General",
+          "Computers / Social Aspects"
+        ],
+        "averageRating": 3,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.2.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/publisher/content?id=NCAjEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73gcECold6zA2N4yvQ84DA8ybnWJTkHS5BGWPBKIrYG6J9BUP_I-4-21wAezStqPuLRIQ6hoQ4LsU74EcxO30xs9ipKeA6gWObZ-NCg63FAOeWXr1GU57OvUVZF0RKzjbcw9W6v&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/publisher/content?id=NCAjEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72ISxUQIb6qR8O6lZnQK-kPbFPIoPMCCY5yUOwHwOxhNRTaGXffkxnffXiBOdXRcqg6JX1aEyXN1TddylO8z_Yeo_SLCvhZPt7LzXejdEGXG7JxMH7F2PN7MauaCDz_HUiNpR2c&source=gbs_api",
+          "small": "http://books.google.com/books/publisher/content?id=NCAjEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71v3gQ-M4OZmQIHHks59fjfC45ohZJJxMGthhpF4keZtPBRPH6UnLBzFYyowHrAL5JbffY8tH8FlD8YVZe3F0cotPCyzMgGMWpMzzI_wi_rIE2eKMbCQAEQ5mvhU4FpOVQ_Koe8&source=gbs_api",
+          "medium": "http://books.google.com/books/publisher/content?id=NCAjEAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72GYbMnhuFkNsTYJFsd_EIFFCL2xZFuxb-XwDfqwmKkUTQvs7HjCQBm3Lt4e6KFI8_2gcHyNB9QYvZQKBoeyHFPKCED1I7af-sfpU8GSTQ-jq_Vm7XCRxsXiyL3VDomW2yrwi-C&source=gbs_api",
+          "large": "http://books.google.com/books/publisher/content?id=NCAjEAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70z1GngBVY0APLOTvV_RKsNi0lozxqYz8uKHKIKChbJk55NKdbNu-yeDr4QJXzKt40QcvhL16NTKmgNA0d4TmLLSGpVufmDlLA17qXREWS3IsB8eEz0ttO5EK2i1VkfkJFpXSCj&source=gbs_api",
+          "extraLarge": "http://books.google.com/books/publisher/content?id=NCAjEAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70q34-caQPo8v1S2FL8MRDi2Gye3FB3bPAITAE3kAFB3TQPom1t6Q3egjGoaJVuRuq-4r54hD3Ad32xTqHLkG4xTtB_a5qja1U-XfzEsE22LLbjILheeE7Z9wrc48P5PirwwEdd&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.ru/books?id=NCAjEAAAQBAJ&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=NCAjEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=NCAjEAAAQBAJ"
+      },
+      "layerInfo": {
+        "layers": [
+          {
+            "layerId": "geo",
+            "volumeAnnotationsVersion": "1"
+          }
+        ]
+      },
+      "saleInfo": {
+        "country": "RU",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 1752.35,
+          "currencyCode": "RUB"
+        },
+        "retailPrice": {
+          "amount": 1752.35,
+          "currencyCode": "RUB"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=NCAjEAAAQBAJ&rdid=book-NCAjEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1752350000,
+              "currencyCode": "RUB"
+            },
+            "retailPrice": {
+              "amountInMicros": 1752350000,
+              "currencyCode": "RUB"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "RU",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/Very_Bad_People-sample-epub.acsm?id=NCAjEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=NCAjEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "4mwSrfxBSzkC",
+      "etag": "ReDSfntLQ9g",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/4mwSrfxBSzkC",
+      "volumeInfo": {
+        "title": "Carl Friedrich Gauss",
+        "subtitle": "Titan of Science",
+        "authors": [
+          "G. Waldo Dunnington",
+          "Jeremy Gray",
+          "Fritz-Egbert Dohse"
+        ],
+        "publisher": "MAA",
+        "publishedDate": "2004-10-14",
+        "description": "This biography of Gauss, by far the most comprehensive in English, is the work of a professor of German, G. Waldo Dunnington, who devoted most of his scholarly career to studying the life of Germany's greatest mathematician. The author was inspired to pursue this project at the age of twelve when he learned from his teacher in Missouri that no full biography of Gauss existed at the time. His teacher was Gauss's great granddaughter, Minna Waldeck Gauss. Long out of print and almost impossible to find on the used book market, this valuable piece of scholarship is being reissued in an augmented form with introductory remarks, an expanded and updated bibliography, and a commentary on Gauss's mathematical diary, by the eminent British mathematical historian, Jeremy Gray.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "088385547X"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780883855478"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 537,
+        "printedPageCount": 608,
+        "dimensions": {
+          "height": "21.00 cm",
+          "width": "14.60 cm",
+          "thickness": "3.80 cm"
+        },
+        "printType": "BOOK",
+        "categories": [
+          "Biography & Autobiography / Science & Technology",
+          "Mathematics / History & Philosophy",
+          "Science / General",
+          "Science / History"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "3.5.4.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=4mwSrfxBSzkC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70IyIItvx0ECYvPQ5-0tw5q5XYUT297jC-4rVNcGWcp2iPgRNlshanSUizfNCNkPqyfVhl_5ANbvvrWpx_q3IuBaPQgqZp0-klTM9qBIwzhKpNUnPURHdz0TO5C9nnLut-duMfr&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=4mwSrfxBSzkC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE71x6n04AP06UlfaSDB0Y9SLNW2mMJ3bBll42geZ4iMkeVjNhByoi98cEpnesVgct4iVRwFFOhLX6dH6tp_yKSTVT-iNNzQyH06DPDeWZJBUDvPbwCbB6-S7s-AIxmc5hB3ybT1f&source=gbs_api",
+          "small": "http://books.google.com/books/content?id=4mwSrfxBSzkC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72j9d7Bg3dfdsJSgq6TIHCzJ1NK7PjlKykWFH7jv53VpIKqowM8N5QVNOUJIcF-rT-9vV6ARuZpiBEdA4i9kaUPBCsXfQ-beg57_AE-7c5_zsMAWzrI4YWMzQYHYEM-1RtwTuvm&source=gbs_api",
+          "medium": "http://books.google.com/books/content?id=4mwSrfxBSzkC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73l-fOK1K7ErdUjKZHdTbTv3EujBP1zg3o6nV_BsmIiNPfpmpDhhofYboIhFosHU9pNrhC978Yj9EBWG_G1GMn2fRsZDzLW1KLqojWUjqcy2H4IUWJcHR7qnEOE1VKq4eYeueh7&source=gbs_api",
+          "large": "http://books.google.com/books/content?id=4mwSrfxBSzkC&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70G5wZZGvzkwKa7esQpt-jdj7HnKOENFCZ77RMLwKX1jZOEYhazQcGJSDcJCq9quZOaGO5VZXuz6J_oiKjIrWtiFNZaOK2aWrAtXdUjk-aqd6N1CaigJ20RoDGosFjVk0NrMrC1&source=gbs_api",
+          "extraLarge": "http://books.google.com/books/content?id=4mwSrfxBSzkC&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE72fYg1-s1IoybvwQhWA94J9g36Ua4vD39-Wuh_2yQ4xSUIbdqA35QbQKtJLeARfHiB0HVGSe6851LyZhi-mXbHVSjjQ9dIh4Y7cCYoJX75x8NVA5t4fqmkoGH9qiaZPhARG87L_&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.ru/books?id=4mwSrfxBSzkC&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=4mwSrfxBSzkC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=4mwSrfxBSzkC"
+      },
+      "saleInfo": {
+        "country": "RU",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "RU",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/Carl_Friedrich_Gauss-sample-pdf.acsm?id=4mwSrfxBSzkC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=4mwSrfxBSzkC&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "b2bdDwAAQBAJ",
+      "etag": "RzkNNSbEiWI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/b2bdDwAAQBAJ",
+      "volumeInfo": {
+        "title": "JavaScript for Modern Web Development",
+        "subtitle": "Building a Web Application Using HTML, CSS, and JavaScript",
+        "authors": [
+          "Alok Ranjan",
+          "Abhilasha Sinha",
+          "Ranjit Battewad"
+        ],
+        "publisher": "BPB Publications",
+        "publishedDate": "2020-04-18",
+        "description": "<p>Beginner to Expert in Web development with JavaScript: From HTML to React-ReduxÊÊ</p><p><br></p><p>KEY FEATURESÊ</p><p>- Acquire web development skills to build independent applicationsÊ</p><p>- Understand the basics of HTML, CSS, JavaScript, React and Redux</p><p>- Create build beautiful applications using HTML, CSS, JavaScript, React and Redux</p><p>- Learn how to debug and unit test your applications properly to build good end products</p><p>- Follow best practices to write good quality code and build performant applications</p><p><br></p><p>DESCRIPTIONÊ</p><p>This book will take you on a complete journey of learning web development, starting right with the basics. The book begins with the history of web development and JavaScript, how it has evolved over these years, and how it still keeps growing with new features. Next, you will learn the basic pillars of web development - HTML, CSS, and JavaScript. You will learn about the functional, object-oriented programming and asynchronous behaviour, and how JavaScript provides for these. Empowered with the basics, you will proceed to learn the new features of JavaScript, ES2015, and the latest ES2019.Ê Next, you will apply your learning to build a real application to see how the Web takes shape.At the end, you will also have an introductory section on ReactJS, one of the modern frameworks for UI development and also develop a simple weather application using React. You will be introduced to Redux as the state container for React applications. This book will conclude with an introductory look at additional topics which can be taken up to become a professional and in building enterprise level applications.</p><p><br></p><p>WHAT WILL YOU LEARNÊÊ</p><p>By the end of the book, you will be building real web applications to put your knowledge to practice. This book introduces all the concepts to get started with web application development. To further excel in this field, you really need to practice by building a lot many applications, implementing your own ideas or imitating existing websites. Also remember to practice additional examples provided in the code bundle of the book to master this field.</p><p><br></p><p>WHO THIS BOOK IS FORÊÊ</p><p>This book can be used by people who are completely new to software development and want to get into front-end web development by starting from basics. This book can also be used by JavaScript users for a quick reference to the fundamentals of HTML, CSS, JS, and learn ReactJS with Redux, as well as the new features in JavaScript ES2019.</p><p><br></p><p>Table of Contents</p><p>1. History of JS and how it has revolutionized web development</p><p>2. HTML: Creating Web ContentÊ</p><p>3. CSS: Making content beautiful</p><p>4. JavaScript Programming: Making application Interactive</p><p>5. Functional programming with JavaScript</p><p>6. Object-Oriented JavaScript</p><p>7. Asynchronous Programming</p><p>8. WhatÕs new in ES2019 JavaScript</p><p>9. Building an application with JavaScript</p><p>10. Debugging JavaScript Applications</p><p>11. Unit test automation</p><p>12. Build and Deploy an Application</p><p>13. JavaScript Best Practices</p><p>14. Introduction to React</p><p>15. Building an application with ReactÊ</p><p>16. State Management in React applications</p><p>17. Debugging, Testing, and Deploying React applications</p><p>18. What is next - for becoming a pro?</p><p><br></p>",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "9389328721"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9789389328721"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 438,
+        "printedPageCount": 421,
+        "dimensions": {
+          "height": "23.50 cm",
+          "width": "19.10 cm",
+          "thickness": "2.30 cm"
+        },
+        "printType": "BOOK",
+        "categories": [
+          "Computers / Internet / Web Programming",
+          "Computers / User Interfaces",
+          "Computers / Languages / JavaScript"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.1.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/publisher/content?id=b2bdDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71h2_kZ4zgSfN8Fatk2yGTbUojTEcLostS_niEAqiACJUpcEjtPn9KL6lSoKv-GpdgygWBF_Iyd_Qf6GQ_i_rILij-ugddBEkR8a2rjz2nUYS1FUMx0pazhz-2Ur32FgRSoNzxc&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/publisher/content?id=b2bdDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73yqYAJZwyTiauaZ8tSRVwWO1jlPP56FDyPyeVWkCDXRAyVapmXjjn8BKlH3xDwZi8ZjsDY2t9ci4uNAV3cmsWmB71dbukkSsi_VNDhAjEnMeCAgSzkmFvQmmXII9dqwhhxPC_C&source=gbs_api",
+          "small": "http://books.google.com/books/publisher/content?id=b2bdDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70BkiftCRXpQ_-mWd_2-6kEvoCoktABa0Lu9BeLZfIupc-CvDh3iIZasfuby0OMXl9kqCLfxPj38az24y4PFzbWr1coPHSPV9E9wyjytyJZpl05x1ZHkck6PZh1m4ugG02hTh_1&source=gbs_api",
+          "medium": "http://books.google.com/books/publisher/content?id=b2bdDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73xhfBsuFwFpHSeqayffWzcpbxRou1Bxko7pjvYvY3b-W8cBNbPwJ3dF2TKlvWgzBnxrf4QgPgsKzlCTXYV9QUz-v0XL05yQ0jvWVUEE1UjQ2YkQvMb5YK6roUZgHntSHyAvgVo&source=gbs_api",
+          "large": "http://books.google.com/books/publisher/content?id=b2bdDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE72O38D2T-KdpVZgTqAXQWiTwngiXlD-QgsV3Vis2wX5EyvRWIVOMUWGkP_eVhcroBcN7BmjrbqP91Mft9nGjovNKISUbQR-M07jap296eNtL-uV7yO9k4pgAItcVaXiZbwa196T&source=gbs_api",
+          "extraLarge": "http://books.google.com/books/publisher/content?id=b2bdDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE734wrWDC4uVdw2rbR36keqi1Pntp7GdIJSniTsqc6hU5EnJ0gqq0iPhF3w17e6p2JYo6vFT6gJtkNgtIzDQJbE3KfIw9m_6MkBWmaPmEjXP2nlTZq_nDYClDfVjfbS4E0P7_rwD&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.ru/books?id=b2bdDwAAQBAJ&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=b2bdDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=b2bdDwAAQBAJ"
+      },
+      "layerInfo": {
+        "layers": [
+          {
+            "layerId": "geo",
+            "volumeAnnotationsVersion": "3"
+          }
+        ]
+      },
+      "saleInfo": {
+        "country": "RU",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 722.49,
+          "currencyCode": "RUB"
+        },
+        "retailPrice": {
+          "amount": 722.49,
+          "currencyCode": "RUB"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=b2bdDwAAQBAJ&rdid=book-b2bdDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 722490000,
+              "currencyCode": "RUB"
+            },
+            "retailPrice": {
+              "amountInMicros": 722490000,
+              "currencyCode": "RUB"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "RU",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/JavaScript_for_Modern_Web_Development-sample-epub.acsm?id=b2bdDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/JavaScript_for_Modern_Web_Development-sample-pdf.acsm?id=b2bdDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=b2bdDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "MqRXAwAAQBAJ",
+      "etag": "vjgxBfb0dlA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/MqRXAwAAQBAJ",
+      "volumeInfo": {
+        "title": "Node.js Разработка серверных веб-приложений на JavaScript",
+        "authors": [
+          "Дэвид Хэррон"
+        ],
+        "publisher": "Litres",
+        "publishedDate": "2022-01-29",
+        "description": "Книга посвящена разработке веб-приложений в Node.js – платформе, которая выводит язык JavaScript за пределы браузера и позволяет использовать его в серверных приложениях. В основе платформы лежит исключительно быстрый движок JavaScript, заимствованный из браузера Chrome, к которому добавлена быстрая и надежная библиотека асинхронного сетевого ввода/вывода. Основной упор в Node.js делается на создании высокопроизводительных, хорошо масштабируемых клиентских и серверных приложений.На практических примерах вы научитесь пользоваться серверным и клиентским объектами HTTP, каркасами Connect и Express, освоите алгоритмы асинхронного выполнения и узнаете, как работать с базами данных на основе SQL и с MongoDB.Начав с практических рекомендаций по установке и настройке Node.js в режиме разработки и эксплуатации, вы научитесь разрабатывать клиентские и серверные HTTP-приложения; познакомитесь с применяемой в Node.js системой организации модулей на основе спецификации CommonJS, позволяющей реализовать подмножество технологии объектно-ориентированного проектирования.Издание предназначено для программистов, знакомых с основами JavaScript и веб-разработки.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "5457573273"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9785457573277"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 146,
+        "printedPageCount": 146,
+        "printType": "BOOK",
+        "categories": [
+          "Computers / General"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/publisher/content?id=MqRXAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73CR9Xd1i2GGU7tdeEtyOyWw0pxqbXTFRY7ViRM_DUgLhryP-9bAGIQ3lFw7MPqamUIskSOp2xoFfxV0ssHr1wdfYNv9R_RTpZNlVLX1FBSjdBNSntY9qATPR6h0MpdlbSJ0yW0&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/publisher/content?id=MqRXAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73pkK0sQAcWoSloNb_jbGT_fu1W5UCYIwl_pnLU6DeYn5H9dkN9GzZDrFpD3Xip17j5fm3whZ739JdwyG152zSgOEPQkESVdRDvcOUBwAVK_5U8RIGmtRC1cZHKf1-gEJFbas7n&source=gbs_api",
+          "small": "http://books.google.com/books/publisher/content?id=MqRXAwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73aDzx_Q_pAja3YTZ_3vVlzt7DojjZt-w8WvMNDgyD6_9gmjW61bA7tZYN2gi1uMdM_-85hoYtaUhjq82nyLtfcYQ6W-7Fb4-clky8HQfD4btRheTmQw9_AyYxWwvfM2gErN04t&source=gbs_api",
+          "medium": "http://books.google.com/books/publisher/content?id=MqRXAwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73zNWyGjCz4POLB5R9y9XShn_xFXb98rIFOEKpAt0t1A3b3aYeYLgBk25h_PhagniEraSZVUZNgQCGVFMtQJB8YNcjZZkHDciCWmhaSd4_Q2fX26S20FZxJv8cfIYO2SnaQvup2&source=gbs_api",
+          "large": "http://books.google.com/books/publisher/content?id=MqRXAwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73HymlGHAf5BfCvK9LIkxsDT35mSF3BJukahWTWJdPCVG3d7Q1-M7pbT_GzlSIq1AiYAZHu1-gASKO1YQVExNw35yC2IQcmjwVS8vG1TlghSCifUlTUY6cdxku9abC_YoM2NVhf&source=gbs_api",
+          "extraLarge": "http://books.google.com/books/publisher/content?id=MqRXAwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70P3ROQy2o9mdafENUiaHg9GM0As1iWSuEy6kcwPb-DAzBAJAoMh30xJ1hSwgSdtzkARVohU2jA-IFZbDnHNaDIr4er9SGNr50c07IcztsRcHZVd3blSH9ce4U50Y9bw6lWuA5l&source=gbs_api"
+        },
+        "language": "ru",
+        "previewLink": "http://books.google.ru/books?id=MqRXAwAAQBAJ&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=MqRXAwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=MqRXAwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "RU",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "RU",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ru/books/download/Node_js_%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%81%D0%B5%D1%80%D0%B2%D0%B5-sample-pdf.acsm?id=MqRXAwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=MqRXAwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Пост про здоровье"
+    },
+    {
+      "id": 2,
+      "title": "Пост про JavaScript"
+    },
+    {
+      "id": 3,
+      "title": "Пост про отдых"
+    }
+  ],
+  "about": {
+    "title": "Страница"
+  }
+}
