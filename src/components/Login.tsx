@@ -3,7 +3,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Form } from "./Form";
 import { setUser } from "../store/userSlice";
 import { useState } from "react";
-
 import { ErrorMessage } from "./ErrorMessage";
 import { IErrorLogin } from "../models";
 

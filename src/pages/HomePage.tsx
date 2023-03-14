@@ -13,7 +13,8 @@ import { PaginationBlock } from "../components/PaginationBlock";
 export function HomePage() {
   const {
     booksVolumes, totalItems, loading, error, category, orderBy, query, page
-  } = useAppSelector( state => state.booksVolumes)  
+  } = useAppSelector( state => state.booksVolumes)
+  
   const dispatch = useAppDispatch()  
   const addSearch = () => {
     if(query.trim().length) {
@@ -24,6 +25,14 @@ export function HomePage() {
   return (
     <Container maxWidth='xl'>
       <AppBarBlock />
+      {query.trim().length === 0 &&
+        <Box sx={{display: "flex"}}>
+          <Typography sx={{mx: 'auto', p: 0}} color="blue">
+            Введите ключевое слово для поиска книги:
+          </Typography>
+        </Box>
+      }
+
       <QueryField
         query={query}
         onInput={(value) => {dispatch(inputQuery(value))}}
@@ -53,7 +62,7 @@ export function HomePage() {
           book => <BookVolumeCard key={book.id+book.etag} book={book}/>
         )}                
       </Box>
-      {booksVolumes &&
+      {booksVolumes.length > 0 &&
         <PaginationBlock
           page={page}
           count={Math.ceil(totalItems/30)}
