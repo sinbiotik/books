@@ -15,7 +15,7 @@ export function BookVolumeCard({book}: BookCardProps) {
     <Link to={`/about/${book.id}`}>
       <Card
         variant="outlined"
-        sx={{ height: 600, width: 330, my: 2,
+        sx={{ height: 600, width: 300, my: 2,
           boxShadow: '0 0 10px 5px rgba(221, 221, 221, 1)',
           '&:hover': { transform: 'scale(1.05)'}
         }}

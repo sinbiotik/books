@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Alert, Box, Container, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { AppBarBlock } from "../components/AppBarBlock";
 import { BookVolumeCard } from "../components/BookVolumeCard";
@@ -18,6 +18,10 @@ export function LocalBookshelf() {
   return (
     <Container maxWidth='xl'>
       <AppBarBlock />
+      <Alert severity="info" sx={{justifyContent: 'center'}}>
+        Страница с избранными книгами, информация о которых хранится в LocalStorage
+      </Alert>
+
       <Box sx={{my: 1, display: 'flex', py: 1, justifyContent: 'center'}}>
         {loading && <Loader />}
         {error && <ErrorMessage error={error} />} 

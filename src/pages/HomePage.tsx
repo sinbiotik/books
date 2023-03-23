@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Alert, Box, Container, Typography } from "@mui/material";
 import { AppBarBlock } from "../components/AppBarBlock";
 import { BookVolumeCard } from '../components/BookVolumeCard';
 import { ErrorMessage } from "../components/ErrorMessage";
@@ -25,12 +25,11 @@ export function HomePage() {
   return (
     <Container maxWidth='xl'>
       <AppBarBlock />
+
       {query.trim().length === 0 &&
-        <Box sx={{display: "flex"}}>
-          <Typography sx={{mx: 'auto', p: 0}} color="blue">
-            Введите ключевое слово для поиска книги:
-          </Typography>
-        </Box>
+        <Alert severity="info" sx={{justifyContent: 'center'}}>
+          Введите ключевое слово для поиска книги:
+        </Alert>
       }
 
       <QueryField

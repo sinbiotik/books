@@ -29,17 +29,17 @@ export function BookInfo({
   return(
     <Card
       variant="outlined"
-      sx={{ width: 'auto', minHeight: 1080, my: 2, 
+      sx={{ maxWidth: 768, minWidth: 320, minHeight: 1024, my: 2, 
         boxShadow: '0 0 10px 5px rgba(221, 221, 221, 1)',
       }}
     >
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, px: 5,}}>
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <Typography sx={{my: 1, mx: 'auto' }} variant="h4">
           {book.volumeInfo.title}
         </Typography>
         <CardMedia
           component="img"
-          sx={{ height: 480, width: 320, mx: 'auto', my: 2,
+          sx={{ height: 480, width: 300, mx: 'auto', my: 2,
             boxShadow: '7px 7px 10px 5px rgba(0, 0, 0, .5)', 
           }}          
           image={imgBook}
@@ -72,7 +72,6 @@ export function BookInfo({
               Add to local bookshelf
             </Button>
           }
-
           {isAdded &&
             <Button
               variant="outlined"
@@ -80,7 +79,7 @@ export function BookInfo({
               sx={{m: 1}}
               onClick={handleRemoveId}
             >
-              Remove to local bookshelf
+              Remove from local bookshelf
             </Button>
           }
 
@@ -93,7 +92,6 @@ export function BookInfo({
               Add to public bookshelf
             </Button>
           }
-
           {isPublicAdded &&
             <Button
               variant="outlined"
@@ -101,7 +99,7 @@ export function BookInfo({
               sx={{m: 1}}
               onClick={onRemovePublicIdHandler}
             >
-              Remove to public bookshelf
+              Remove from public bookshelf
             </Button>
           }
         </Box>
