@@ -2,7 +2,9 @@
 https://github.com/fugr-ru/frontend-javascript-test-2
 
 Необходимо было разработать React-приложение поиска книг с помощью реального Google Books API.
+
 Приложение разработано на TypeScript с использованием библиотек React и Redux Toolkit. Фреймворк UI: Material UI
+
 Дополнительно был добавлен функционал:
 - аутентификация, реализованная через Firebase;
 - страница с избранными книгами, информация о которых хранится в LocalStorage;

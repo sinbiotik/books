@@ -1,4 +1,4 @@
-import {Route, Routes} from 'react-router-dom'
+ import {Route, Routes} from 'react-router-dom'
 import { useAuth } from './hooks/use-auth';
 import { AboutPage } from './pages/AboutPage';
 import { HomePage } from './pages/HomePage';

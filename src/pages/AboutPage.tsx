@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material';
+import { Alert, Box, Container } from '@mui/material';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppBarBlock } from '../components/AppBarBlock';
@@ -28,11 +28,15 @@ export function AboutPage() {
   return(
     <Container maxWidth='xl'>
       <AppBarBlock />
-      <Box sx={{my: 1, display: 'flex', py: 1, justifyContent: 'center'}}>
+      <Alert severity="info" sx={{justifyContent: 'center'}}>
+        Любую книгу можно добавить на свою локальную или публичную книжную полку                
+      </Alert>
+      <Box sx={{my: 1,  py: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+
+
         {loading && <Loader />}
         {error && <ErrorMessage error={error} />}
-      </Box>
-      <Box>
+
         {book && 
           <BookInfo            
             book={book}
@@ -45,6 +49,7 @@ export function AboutPage() {
           />
         }
       </Box>
+
     </Container>
   )
 }
