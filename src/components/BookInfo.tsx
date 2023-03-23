@@ -83,7 +83,7 @@ export function BookInfo({
             </Button>
           }
 
-          {!isPublicAdded &&
+          {/* {!isPublicAdded &&
             <Button
               variant="contained"
               sx={{m: 1}}
@@ -101,7 +101,7 @@ export function BookInfo({
             >
               Remove from public bookshelf
             </Button>
-          }
+          } */}
         </Box>
       </CardContent>
     </Card>   

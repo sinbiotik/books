@@ -6,7 +6,7 @@ interface ErrorMessageProps {
 
 export function ErrorMessage({ error }: ErrorMessageProps) {
   return (
-    <Typography color="red">
+    <Typography sx={{px: 2, mx:2}} color="red">
       ERROR MESSAGE: <strong>'{ error }'</strong> 
     </Typography>
   )  

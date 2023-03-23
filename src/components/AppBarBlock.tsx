@@ -55,9 +55,9 @@ export function AppBarBlock() {
               <MenuItem onClick={handleClose}>
                 <Link to={`/localbookshelf`}>Local bookshelf</Link>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              {/* <MenuItem onClick={handleClose}>
                 <Link to={`/publicbookshelf`}>Public</Link> 
-              </MenuItem>
+              </MenuItem> */}
             </Menu>
 
             <Typography variant="h6" component="div">
@@ -73,9 +73,9 @@ export function AppBarBlock() {
             <Link to={`/localbookshelf`}>
               <Button sx={{ color: '#fff', ml: 1 }}>Local bookshelf</Button>
             </Link>
-            <Link to={`/publicbookshelf`}>
+            {/* <Link to={`/publicbookshelf`}>
               <Button sx={{ color: '#fff', ml: 1 }}>Public</Button>
-            </Link>            
+            </Link>             */}
           </Box>
           <Button
             size="small"

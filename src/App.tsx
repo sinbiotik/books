@@ -15,7 +15,7 @@ function App() {
         <Route path='/' element={ <HomePage/> } />        
         <Route path='/about/:id' element={ <AboutPage /> } />
         <Route path='/localbookshelf' element={ <LocalBookshelf /> } />
-        <Route path='/publicbookshelf' element={ <PublicBookshelf /> } /> 
+        {/* <Route path='/publicbookshelf' element={ <PublicBookshelf /> } />  */}
       </Routes>
     )
   }

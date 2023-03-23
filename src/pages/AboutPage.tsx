@@ -22,7 +22,7 @@ export function AboutPage() {
   useEffect(() => {
     if (!id) return
     dispatch(fetchBook(id))
-    dispatch(fetchPublicBook(id))
+    // dispatch(fetchPublicBook(id))
   }, [dispatch])
   
   return(

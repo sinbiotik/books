@@ -13,7 +13,7 @@ import storage from 'redux-persist/lib/storage'
 import booksVolumesReducer from './booksVolumesSlice'
 import bookReducer from './bookSlice'
 import localBookshelfReducer from './localBookshelfSlice'
-import publicBookshelfReduceer from './publicBookshelfSlice'
+import publicBookshelfReducer from './publicBookshelfSlice'
 import userReducer from './userSlice'
 
 const persistConfig = {
@@ -26,7 +26,7 @@ const rootReducer = combineReducers({
   booksVolumes: booksVolumesReducer,
   book: bookReducer,
   localBookshelf: persistedReducer,
-  publicBookshelf: publicBookshelfReduceer,
+  publicBookshelf: publicBookshelfReducer,
   user: userReducer,
 })
 
