@@ -13,18 +13,16 @@ export function LoginPage() {
           <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
             <Typography variant="h6" component="div">
               BOOKS
-            </Typography>          
+            </Typography>      
           </Toolbar>
         </AppBar>
       </Box>
-
       
       <Alert severity="info" sx={{justifyContent: 'center'}}>
         Аутентификация реализована через сервис Firebase.
         Email может быть реальным, или несуществующим, но должен содержать знаки '@' и '.'
         Пароль придумайте любой, длинной больше 5 символов.
       </Alert>
-
 
       <Box  sx={{ display: 'flex', mb: 12, justifyContent: 'center' }}>
         <Card
@@ -37,15 +35,16 @@ export function LoginPage() {
             <Box sx={{ display: 'flex', flexDirection: 'column'}}>
               <Typography sx={{my: 1, mx: 'auto' }} variant="h4">Login</Typography>
               <Login/>
-              <Typography color="text.secondary" sx={{px: 2, mx: 2}} >
-                Don't have an account yet? 
-                <Button
-                  onClick={() => {setIsNewUser(prev => !prev)}}
-                  variant="outlined" size="small" 
-                >
-                  Register
-                </Button> 
+              <Typography color="text.secondary" sx={{px: 2, mx: 'auto'}} >
+                Еще нет аккаунта?
               </Typography>
+              <Button
+                sx={{mx: 'auto'}}
+                onClick={() => {setIsNewUser(prev => !prev)}}
+                variant="outlined" size="small" 
+              >
+                зарегистрироваться
+              </Button> 
             </Box>
           }
 
@@ -53,15 +52,16 @@ export function LoginPage() {
             <Box sx={{ display: 'flex', flexDirection: 'column'}}>
               <Typography sx={{my: 1, mx: 'auto' }} variant="h4">Register</Typography>
               <SignUp/>
-              <Typography color="text.secondary" sx={{px: 2, mx: 2}} >
-                Already have an account?
-                <Button
-                  onClick={() => {setIsNewUser(prev => !prev)}}
-                  variant="outlined" size="small"
-                >                
-                  Sign in
-                </Button>           
+              <Typography color="text.secondary" sx={{px: 2, mx: 'auto'}} >
+                Уже есть аккаунт?          
               </Typography>
+              <Button
+                sx={{mx: 'auto'}}
+                onClick={() => {setIsNewUser(prev => !prev)}}
+                variant="outlined" size="small"
+              >                
+                Войти
+              </Button> 
             </Box>
           }
         </Card>

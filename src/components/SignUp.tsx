@@ -26,7 +26,7 @@ export function SignUp() {
   return (
     <>
       {error && <ErrorMessage error={error.message}/>}
-      <Form title="sign in" handleClick={handleRegister}/>
+      <Form title="register" handleClick={handleRegister}/>
     </>
   )
 }
